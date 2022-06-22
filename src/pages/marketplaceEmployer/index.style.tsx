@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const Page2Container = styled.div`
+export const EmployerContainer = styled.div`
   height: 90vh;
 `;
