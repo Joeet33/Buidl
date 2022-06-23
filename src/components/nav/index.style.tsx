@@ -17,28 +17,28 @@ export const NavContainer = styled.div`
 
     li {
       display: inline-block;
-      padding: 0px 20px;
+      padding-right: 4vw;
       font-weight: bold;
       text-decoration: none;
-      font-size: x-large;
+      font-size: 4vh;
     }
   }
 `;
 
 export const StyledLogo = styled.div`
   font-weight: bold;
-  font-size: xx-large;
+  font-size: 5vh;
   text-decoration: none;
   cursor: default;
   padding-left: 2vw;
-  padding-top: 1.5vh;
+  align-items: center;
 `;
 
 export const StyledSearch = styled.div`
   font-weight: bold;
-  font-size: xx-large;
+  font-size: 5vh;
   text-decoration: none;
   cursor: default;
   padding-left: 3vw;
-  padding-top: 1.5vh;
+  align-items: center;
 `;
