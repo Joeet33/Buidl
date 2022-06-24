@@ -1,5 +1,11 @@
 import { StyledContainer } from "../../components/main/mainWrapper";
+import { Nav } from "../../components/nav";
 
 export const MarketPlaceEmployer = () => {
-  return <StyledContainer>employer</StyledContainer>;
+  return (
+    <>
+      <Nav />
+      <StyledContainer>employer</StyledContainer>
+    </>
+  );
 };

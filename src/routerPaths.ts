@@ -1,5 +1,5 @@
 export const ROUTER_PATHS = {
-  PROFILE: "/",
+  SIGNUP: "/",
   EMPLOYEE: "/MarketplaceEmployee",
   EMPLOYER: "/MarketplaceEmployer",
 };

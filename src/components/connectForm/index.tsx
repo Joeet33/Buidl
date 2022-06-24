@@ -3,7 +3,8 @@ import { ConnectContainer } from "./index.style";
 export const Connect = () => {
   return (
     <ConnectContainer>
-      <button>Connect</button>
+      <h1>Buidl</h1>
+      <button>Signup</button>
     </ConnectContainer>
   );
 };
