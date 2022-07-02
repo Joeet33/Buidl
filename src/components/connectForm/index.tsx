@@ -1,14 +1,14 @@
-import { useContext } from "react";
-import { Web3Context } from "../../context/web3Context";
 import { ConnectContainer } from "./index.style";
+import { useMoralis } from "react-moralis";
 
 export const Connect = () => {
-  const { connectWallet }: any = useContext(Web3Context);
-
+  const { authenticate, authError }: any = useMoralis();
   return (
     <ConnectContainer>
       <h1>Buidl</h1>
-      <button onClick={connectWallet}>Signup</button>
+      <button type="submit" onClick={authenticate}>
+        Signup
+      </button>
     </ConnectContainer>
   );
 };
