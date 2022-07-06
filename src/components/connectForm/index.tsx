@@ -2,7 +2,7 @@ import { ConnectContainer } from "./index.style";
 import { useMoralis } from "react-moralis";
 
 export const Connect = () => {
-  const { authenticate, authError }: any = useMoralis();
+  const { authenticate }: any = useMoralis();
   return (
     <ConnectContainer>
       <h1>Buidl</h1>
