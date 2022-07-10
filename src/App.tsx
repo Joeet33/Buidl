@@ -1,46 +1,29 @@
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  Navigate,
-  Outlet,
-} from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { MarketPlaceEmployee } from "./pages/marketplaceEmployee";
 import { MarketPlaceEmployer } from "./pages/marketplaceEmployer";
 import { ROUTER_PATHS } from "./routerPaths";
 import { Signup } from "./pages/signup";
-import { useContext } from "react";
-import { Web3Context } from "./context/web3Context";
+import { useMoralis } from "react-moralis";
+import { useEffect } from "react";
 
 export const App = () => {
-  const { currentAccount }: any = useContext(Web3Context);
+  const { isAuthenticated } = useMoralis();
+  const navigate = useNavigate();
 
-  //protected routes
-  const useAuth = () => {
-    const user = { loggedIn: false };
-    return user && user.loggedIn;
-  };
-
-  const ProtectedRoutes = () => {
-    const isAuth = useAuth();
-    return isAuth ? <Outlet /> : <Navigate to="/" />;
-  };
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate(ROUTER_PATHS.SIGNUP);
+    } else {
+      navigate(ROUTER_PATHS.EMPLOYEE);
+    }
+  }, [isAuthenticated]);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={ROUTER_PATHS.SIGNUP} element={<Signup />} />
-        <Route element={<ProtectedRoutes />}>
-          <Route
-            path={ROUTER_PATHS.EMPLOYER}
-            element={<MarketPlaceEmployer />}
-          />
-          <Route
-            path={ROUTER_PATHS.EMPLOYEE}
-            element={<MarketPlaceEmployee />}
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path={ROUTER_PATHS.SIGNUP} element={<Signup />} />
+
+      <Route path={ROUTER_PATHS.EMPLOYER} element={<MarketPlaceEmployer />} />
+      <Route path={ROUTER_PATHS.EMPLOYEE} element={<MarketPlaceEmployee />} />
+    </Routes>
   );
 };
