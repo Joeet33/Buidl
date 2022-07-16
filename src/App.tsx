@@ -5,6 +5,7 @@ import { ROUTER_PATHS } from "./routerPaths";
 import { Signup } from "./pages/signup";
 import { useMoralis } from "react-moralis";
 import { useEffect } from "react";
+import { Profile } from "./pages/profile";
 
 export const App = () => {
   const { isAuthenticated } = useMoralis();
@@ -24,6 +25,7 @@ export const App = () => {
 
       <Route path={ROUTER_PATHS.EMPLOYER} element={<MarketPlaceEmployer />} />
       <Route path={ROUTER_PATHS.EMPLOYEE} element={<MarketPlaceEmployee />} />
+      <Route path={ROUTER_PATHS.PROFILE} element={<Profile />} />
     </Routes>
   );
 };

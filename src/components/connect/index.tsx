@@ -1,8 +1,8 @@
-import { ConnectContainer } from "./index.style";
 import { useMoralis } from "react-moralis";
+import { ConnectContainer } from "./index.style";
 
 export const Connect = () => {
-  const { authenticate, isAuthenticated, logout, user } = useMoralis();
+  const { authenticate, isAuthenticated, logout } = useMoralis();
 
   return (
     <ConnectContainer>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavContainer = styled.div`
@@ -25,7 +26,8 @@ export const NavContainer = styled.div`
   }
 `;
 
-export const StyledLogo = styled.div`
+export const StyledLogo = styled(Link)`
+  display: -webkit-inline-box;
   font-weight: bold;
   font-size: 5vh;
   text-decoration: none;
