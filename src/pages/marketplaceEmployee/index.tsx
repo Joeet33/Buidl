@@ -3,15 +3,19 @@ import { StyledContainer } from "../../components/main/mainWrapper";
 import { Nav } from "../../components/nav";
 
 export const MarketPlaceEmployee = () => {
-  const { Moralis, isAuthenticated, account } = useMoralis();
+  const { Moralis, logout, isInitialized } = useMoralis();
 
-  const user = Moralis.User.current();
+  const user = isInitialized && Moralis.User.current();
   return (
     <>
       <Nav />
       <StyledContainer>
         <div>employee</div>
-        <div>{user?.attributes?.username}</div>
+        <div>{user && user?.attributes?.username}</div>
+
+        <button type="button" onClick={logout}>
+          logout
+        </button>
       </StyledContainer>
     </>
   );
