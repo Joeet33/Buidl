@@ -5,13 +5,13 @@ import { Nav } from "../../components/nav";
 export const MarketPlaceEmployee = () => {
   const { Moralis, logout, isInitialized } = useMoralis();
 
-  const user = isInitialized && Moralis.User.current();
+  const user = isInitialized ? Moralis.User.current() : undefined;
   return (
     <>
       <Nav />
       <StyledContainer>
         <div>employee</div>
-        <div>{user && user?.attributes?.username}</div>
+        {user && <div>{user?.attributes?.username}</div>}
 
         <button type="button" onClick={logout}>
           logout
