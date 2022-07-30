@@ -76,6 +76,20 @@ export const PfpSelect = () => {
     window.location.reload();
   };
 
+const selectPfp = pfps?.map((e: string, i:number) => {
+    return (
+        <PfpOption
+        key={i}
+          active={selectedPFP && selectedPFP === e}
+          src={e}
+          onClick={() => {
+            setSelectedPFP(e);
+            console.log("clicked");
+          }}
+        />
+    );
+  })
+
   return (
     <>
       <div className="pageIdentify">Pfp</div>
@@ -83,20 +97,7 @@ export const PfpSelect = () => {
       <div className="pfp">
         Profile Image (Your NFTs)
         <PfpOptions>
-          {pfps?.map((e: string, i: any) => {
-            return (
-              <>
-                <PfpOption
-                  active={selectedPFP && selectedPFP === e}
-                  src={e}
-                  onClick={() => {
-                    setSelectedPFP(pfps[i]);
-                    console.log("clicked");
-                  }}
-                />
-              </>
-            );
-          })}
+          {selectPfp}
         </PfpOptions>
       </div>
 
