@@ -1,4 +1,5 @@
 import { useMoralis } from "react-moralis";
+import { Dashboard } from "../../components/gitHubDashboard";
 import { StyledContainer } from "../../components/main/mainWrapper";
 import { Nav } from "../../components/nav";
 import { PfpDisplay } from "../../components/pfpSelect/index.style";
@@ -18,6 +19,10 @@ export const MarketPlaceEmployee = () => {
         <button type="button" onClick={logout}>
           logout
         </button>
+
+        <br></br>
+
+        <Dashboard />
       </StyledContainer>
     </>
   );
