@@ -8,8 +8,8 @@ export const PfpOptions = styled.div`
   gap: 30px;
 `;
 
-interface Props{
-    active: string | undefined | boolean;
+interface Props {
+  active: string | undefined | boolean;
 }
 
 export const PfpOption = styled.img<Props>`
@@ -17,21 +17,13 @@ export const PfpOption = styled.img<Props>`
   margin-top: 10px;
   width: 110px;
   height: 110px;
-  border: ${props => props.active ? "5px solid #1da1f2" : "5px"};
+  border: ${(props) => (props.active ? "5px solid #1da1f2" : "5px")};
 `;
 
-export const PfpOption2 = styled.img`
+export const PfpDisplay = styled.img`
   border-radius: 50%;
   margin-top: 10px;
   width: 110px;
   height: 110px;
   border: 5px;
-`;
-
-export const PfpOptionSelected = styled.img`
-  border-radius: 50%;
-  margin-top: 10px;
-  width: 110px;
-  height: 110px;
-  border: 5px solid #1da1f2;
 `;

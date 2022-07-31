@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
-import { PfpOptions, PfpOption, PfpOptionSelected } from "./index.style";
+import { PfpOptions, PfpOption } from "./index.style";
 
 export const PfpSelect = () => {
   const { Moralis, isAuthenticated, account } = useMoralis();
@@ -76,19 +76,19 @@ export const PfpSelect = () => {
     window.location.reload();
   };
 
-const selectPfp = pfps?.map((e: string, i:number) => {
+  const selectPfp = pfps?.map((e: string, i: number) => {
     return (
-        <PfpOption
+      <PfpOption
         key={i}
-          active={selectedPFP && selectedPFP === e}
-          src={e}
-          onClick={() => {
-            setSelectedPFP(e);
-            console.log("clicked");
-          }}
-        />
+        active={selectedPFP && selectedPFP === e}
+        src={e}
+        onClick={() => {
+          setSelectedPFP(e);
+          console.log("clicked");
+        }}
+      />
     );
-  })
+  });
 
   return (
     <>
@@ -96,9 +96,7 @@ const selectPfp = pfps?.map((e: string, i:number) => {
 
       <div className="pfp">
         Profile Image (Your NFTs)
-        <PfpOptions>
-          {selectPfp}
-        </PfpOptions>
+        <PfpOptions>{selectPfp}</PfpOptions>
       </div>
 
       <button className="save" onClick={() => savePfpEdits()}>
