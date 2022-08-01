@@ -4,6 +4,7 @@ import { useMoralis } from "react-moralis";
 export const Settings = () => {
   const [username, setUsername] = useState("");
   const [bio, setBio] = useState("");
+  const [role, setRole] = useState("")
   const { Moralis, isInitialized } = useMoralis();
 
   const user = isInitialized ? Moralis.User.current() : undefined;
@@ -19,6 +20,10 @@ export const Settings = () => {
 
     if (username) {
       myDetails?.set("username", username);
+    }
+
+    if (role) {
+      myDetails?.set("role", role)
     }
     try {
       await myDetails?.save();
@@ -43,6 +48,13 @@ export const Settings = () => {
           width="100%"
           placeholder={user?.attributes?.bio}
           onChange={(e) => setBio(e.target.value)}
+        />
+
+<input
+          name="roleChange"
+          width="100%"
+          placeholder={user?.attributes?.role}
+          onChange={(e) => setRole(e.target.value)}
         />
 
         <button onClick={saveEdits}>Save</button>

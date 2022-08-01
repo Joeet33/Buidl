@@ -3,10 +3,13 @@ import axios from "axios";
 import { IGitHubUser } from "../../interfaces/IGitHubUser";
 import { RepositoriesList } from "../gitHubRepos";
 import { useMoralis } from "react-moralis";
+import { json } from "stream/consumers";
 
 export const Dashboard = () => {
   const [userSearch, setUserSearch] = useState<string>("");
   const [foundUser, setFoundUser] = useState<IGitHubUser>();
+  const { Moralis, isInitialized } = useMoralis();
+  const user = isInitialized ? Moralis.User.current() : undefined;
 
   const performSearchRequest = async () => {
     try {
@@ -24,9 +27,7 @@ export const Dashboard = () => {
     performSearchRequest();
   };
 
-  const { Moralis, isInitialized } = useMoralis();
-
-  const user = isInitialized ? Moralis.User.current() : undefined;
+  
 
   const saveEdits = async () => {
     const User = Moralis.Object.extend("_User");
@@ -34,7 +35,7 @@ export const Dashboard = () => {
     const myDetails = await query.first();
 
     if (foundUser) {
-      myDetails?.set("github", foundUser.name);
+      myDetails?.set("github", foundUser);
       console.log("details saved");
     }
 
@@ -43,8 +44,12 @@ export const Dashboard = () => {
     } catch (err) {
       console.log(err);
     }
-    window.location.reload();
+    // window.location.reload();
   };
+
+  
+
+// const githubRepos = user && user.attributes.github.repos_url
 
   return (
     <>
@@ -66,25 +71,25 @@ export const Dashboard = () => {
             <div>
               <p>
                 <strong>Name: </strong>
-                {foundUser.name}
+                {user && user.attributes.github.name}
               </p>
               <p>
                 <strong>Company: </strong>
-                {foundUser.company}
+                {user && user.attributes.github.company}
               </p>
               <p>
                 <strong>Location: </strong>
-                {foundUser.location}
+                {user && user.attributes.github.location}
               </p>
               <p>
                 <strong>Followers: </strong>
-                {foundUser.followers}
+                {user && user.attributes.github.followers}
               </p>
             </div>
-            <img src={foundUser.avatar_url} alt={foundUser.name} />
+            <img src={user && user.attributes.github.avatar_url} alt={foundUser.name} />
           </div>
           <br></br>
-          <RepositoriesList repositoriesUrl={foundUser.repos_url} />
+          <RepositoriesList repositoriesUrl={user && user.attributes.github.repos_url} />
         </div>
       )}
     </>
