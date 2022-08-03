@@ -1,9 +1,8 @@
-import  { FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import axios from "axios";
 import { IGitHubUser } from "../../interfaces/IGitHubUser";
 import { RepositoriesList } from "../gitHubRepos";
 import { useMoralis } from "react-moralis";
-
 
 export const Dashboard = () => {
   const [userSearch, setUserSearch] = useState<string>("");
@@ -27,8 +26,6 @@ export const Dashboard = () => {
     performSearchRequest();
   };
 
-  
-
   const saveEdits = async () => {
     const User = Moralis.Object.extend("_User");
     const query = new Moralis.Query(User);
@@ -47,9 +44,7 @@ export const Dashboard = () => {
     // window.location.reload();
   };
 
-  
-
-// const githubRepos = user && user.attributes.github.repos_url
+  // const githubRepos = user && user.attributes.github.repos_url
 
   return (
     <>
@@ -86,10 +81,15 @@ export const Dashboard = () => {
                 {user && user.attributes.github.followers}
               </p>
             </div>
-            <img src={user && user.attributes.github.avatar_url} alt={foundUser.name} />
+            <img
+              src={user && user.attributes.github.avatar_url}
+              alt={foundUser.name}
+            />
           </div>
           <br></br>
-          <RepositoriesList repositoriesUrl={user && user.attributes.github.repos_url} />
+          <RepositoriesList
+            repositoriesUrl={user && user.attributes.github.repos_url}
+          />
         </div>
       )}
     </>

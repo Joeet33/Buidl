@@ -52,7 +52,7 @@ export const PfpSelect = () => {
           address: user?.attributes?.ethAddress,
         };
         const ropstenNFTs = await Web3Api.account.getNFTs(options);
-        
+
         if (!ropstenNFTs.result) return;
         const images = ropstenNFTs.result.map((e) =>
           resolveLink(JSON.parse(e.metadata!)?.image)

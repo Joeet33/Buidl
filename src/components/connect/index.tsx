@@ -6,7 +6,7 @@ import { ConnectContainer } from "./index.style";
 
 export const Connect = () => {
   const { authenticate, isAuthenticated, logout } = useMoralis();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isAuthenticated) {
