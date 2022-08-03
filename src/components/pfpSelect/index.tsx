@@ -3,10 +3,11 @@ import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 import { PfpOptions, PfpOption } from "./index.style";
 
 export const PfpSelect = () => {
-  const { Moralis, isAuthenticated, account } = useMoralis();
+  const { Moralis, isAuthenticated, account, isInitialized } = useMoralis();
   const Web3Api = useMoralisWeb3Api();
   const [pfps, setPfps] = useState<string[]>();
   const [selectedPFP, setSelectedPFP] = useState<string>();
+  const user = isInitialized ? Moralis.User.current() : undefined;
 
   const resolveLink = (url: string) => {
     if (!url || !url.includes("ipfs://")) return url;
@@ -44,24 +45,28 @@ export const PfpSelect = () => {
   }
 
   useEffect(() => {
-    if (account) {
+    if (user?.attributes?.ethAddress) {
       const fetchNFTs = async () => {
         const options: OptionsProps = {
           chain: "mumbai",
-          address: account,
+          address: user?.attributes?.ethAddress,
         };
-
         const ropstenNFTs = await Web3Api.account.getNFTs(options);
+        
         if (!ropstenNFTs.result) return;
         const images = ropstenNFTs.result.map((e) =>
           resolveLink(JSON.parse(e.metadata!)?.image)
         );
         setPfps(images);
       };
-
-      fetchNFTs();
+      try {
+        fetchNFTs();
+      } catch (err) {
+        console.log(err);
+      }
     }
-  }, [isAuthenticated, account]);
+    console.log("test");
+  }, [isAuthenticated, user?.attributes?.ethAddress]);
 
   const savePfpEdits = async () => {
     const User = Moralis.Object.extend("_User");

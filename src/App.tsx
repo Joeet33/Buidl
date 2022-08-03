@@ -11,10 +11,6 @@ export const App = () => {
   const { isAuthenticated, isInitialized } = useMoralis();
   const navigate = useNavigate();
 
-  // const Test = ({children}) => {if(isAuthenticated) {
-  //   return children
-  // }}
-
   useEffect(() => {
     if (!isAuthenticated && isInitialized) {
       navigate(ROUTER_PATHS.SIGNUP);
