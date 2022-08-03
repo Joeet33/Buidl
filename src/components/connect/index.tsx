@@ -1,8 +1,18 @@
+import { useEffect } from "react";
 import { useMoralis } from "react-moralis";
+import { useNavigate } from "react-router";
+import { ROUTER_PATHS } from "../../routerPaths";
 import { ConnectContainer } from "./index.style";
 
 export const Connect = () => {
   const { authenticate, isAuthenticated, logout } = useMoralis();
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate(ROUTER_PATHS.EMPLOYEE);
+    }
+  }, [isAuthenticated]);
 
   return (
     <ConnectContainer>

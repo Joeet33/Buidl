@@ -8,16 +8,18 @@ import { useEffect } from "react";
 import { Profile } from "./pages/profile";
 
 export const App = () => {
-  const { isAuthenticated } = useMoralis();
+  const { isAuthenticated, isInitialized } = useMoralis();
   const navigate = useNavigate();
 
+  // const Test = ({children}) => {if(isAuthenticated) {
+  //   return children
+  // }}
+
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!isAuthenticated && isInitialized) {
       navigate(ROUTER_PATHS.SIGNUP);
-    } else {
-      navigate(ROUTER_PATHS.EMPLOYEE);
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, isInitialized]);
 
   return (
     <Routes>

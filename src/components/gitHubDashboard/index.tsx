@@ -1,9 +1,9 @@
-import React, { FormEvent, useEffect, useState } from "react";
+import  { FormEvent, useState } from "react";
 import axios from "axios";
 import { IGitHubUser } from "../../interfaces/IGitHubUser";
 import { RepositoriesList } from "../gitHubRepos";
 import { useMoralis } from "react-moralis";
-import { json } from "stream/consumers";
+
 
 export const Dashboard = () => {
   const [userSearch, setUserSearch] = useState<string>("");
