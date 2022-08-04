@@ -1,8 +1,8 @@
 import { useMoralis } from "react-moralis";
-import { Dashboard } from "../../components/gitHubDashboard";
+import { Dashboard } from "../../components/settingsGitHubSaveUser";
 import { StyledContainer } from "../../components/main/mainWrapper";
 import { Nav } from "../../components/nav";
-import { PfpDisplay } from "../../components/pfpSelect/index.style";
+import { PfpDisplay } from "../../components/settingsPfp/index.style";
 
 export const MarketPlaceEmployee = () => {
   const { Moralis, logout, isInitialized } = useMoralis();

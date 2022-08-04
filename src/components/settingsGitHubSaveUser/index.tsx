@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import axios from "axios";
 import { IGitHubUser } from "../../interfaces/IGitHubUser";
-import { RepositoriesList } from "../gitHubRepos";
+import { RepositoriesList } from "../settingsGitHubRepos";
 import { useMoralis } from "react-moralis";
 
 export const Dashboard = () => {
@@ -41,10 +41,7 @@ export const Dashboard = () => {
     } catch (err) {
       console.log(err);
     }
-    // window.location.reload();
   };
-
-  // const githubRepos = user && user.attributes.github.repos_url
 
   return (
     <>
