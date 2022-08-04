@@ -54,40 +54,6 @@ export const GitHubSaveUser = () => {
         />
         <button onClick={saveEdits}>Search</button>
       </form>
-
-      {foundUser && (
-        <div>
-          <h3>{foundUser.login}</h3>
-          <div className="user-details">
-            <div>
-              <p>
-                <strong>Name: </strong>
-                {foundUser.name}
-              </p>
-              <p>
-                <strong>Company: </strong>
-                {foundUser.company}
-              </p>
-              <p>
-                <strong>Location: </strong>
-                {foundUser.location}
-              </p>
-              <p>
-                <strong>Followers: </strong>
-                {foundUser.followers}
-              </p>
-            </div>
-            <img
-              src={foundUser.avatar_url}
-              alt={foundUser.name}
-            />
-          </div>
-          <br></br>
-          <RepositoriesList
-            repositoriesUrl={user && user.attributes.github.repos_url}
-          />
-        </div>
-      )}
     </>
   );
 };

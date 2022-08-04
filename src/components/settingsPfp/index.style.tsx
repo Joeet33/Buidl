@@ -20,7 +20,7 @@ export const PfpOption = styled.img<Props>`
   border: ${(props) => (props.active ? "5px solid #1da1f2" : "5px")};
 `;
 
-export const PfpDisplay = styled.img`
+export const PfpStyle = styled.img`
   border-radius: 50%;
   margin-top: 10px;
   width: 110px;
