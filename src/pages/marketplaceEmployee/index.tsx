@@ -1,8 +1,9 @@
 import { useMoralis } from "react-moralis";
-import { Dashboard } from "../../components/settingsGitHubSaveUser";
+import { GitHubSaveUser } from "../../components/settingsGitHubSaveUser";
 import { StyledContainer } from "../../components/main/mainWrapper";
 import { Nav } from "../../components/nav";
 import { PfpDisplay } from "../../components/settingsPfp/index.style";
+import { GitHubActivity } from "../../components/settingsGitHubActivity";
 
 export const MarketPlaceEmployee = () => {
   const { Moralis, logout, isInitialized } = useMoralis();
@@ -22,7 +23,8 @@ export const MarketPlaceEmployee = () => {
 
         <br></br>
 
-        <Dashboard />
+        <GitHubSaveUser />
+        <GitHubActivity />
       </StyledContainer>
     </>
   );

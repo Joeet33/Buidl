@@ -4,7 +4,7 @@ import { IGitHubUser } from "../../interfaces/IGitHubUser";
 import { RepositoriesList } from "../settingsGitHubRepos";
 import { useMoralis } from "react-moralis";
 
-export const Dashboard = () => {
+export const GitHubSaveUser = () => {
   const [userSearch, setUserSearch] = useState<string>("");
   const [foundUser, setFoundUser] = useState<IGitHubUser>();
   const { Moralis, isInitialized } = useMoralis();
@@ -52,9 +52,8 @@ export const Dashboard = () => {
           onChange={(e) => setUserSearch(e.target.value)}
           placeholder="Enter a username..."
         />
-        <button>Search</button>
+        <button onClick={saveEdits}>Search</button>
       </form>
-      <button onClick={saveEdits}>Search</button>
 
       {foundUser && (
         <div>
@@ -63,23 +62,23 @@ export const Dashboard = () => {
             <div>
               <p>
                 <strong>Name: </strong>
-                {user && user.attributes.github.name}
+                {foundUser.name}
               </p>
               <p>
                 <strong>Company: </strong>
-                {user && user.attributes.github.company}
+                {foundUser.company}
               </p>
               <p>
                 <strong>Location: </strong>
-                {user && user.attributes.github.location}
+                {foundUser.location}
               </p>
               <p>
                 <strong>Followers: </strong>
-                {user && user.attributes.github.followers}
+                {foundUser.followers}
               </p>
             </div>
             <img
-              src={user && user.attributes.github.avatar_url}
+              src={foundUser.avatar_url}
               alt={foundUser.name}
             />
           </div>

@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 import { PfpOptions, PfpOption } from "./index.style";
 
-export const PfpSelect = () => {
+export const SettingsPfp = () => {
   const { Moralis, isAuthenticated, account, isInitialized } = useMoralis();
   const Web3Api = useMoralisWeb3Api();
   const [pfps, setPfps] = useState<string[]>();
@@ -97,16 +97,9 @@ export const PfpSelect = () => {
 
   return (
     <>
-      <div className="pageIdentify">Pfp</div>
+      <PfpOptions>{selectPfp}</PfpOptions>
 
-      <div className="pfp">
-        Profile Image (Your NFTs)
-        <PfpOptions>{selectPfp}</PfpOptions>
-      </div>
-
-      <button className="save" onClick={() => savePfpEdits()}>
-        Save 2
-      </button>
+      <button onClick={() => savePfpEdits()}>Save 2</button>
     </>
   );
 };
