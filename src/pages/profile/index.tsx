@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { DisplayPfp } from "../../components/displayPfp";
+import { DisplayUsername } from "../../components/displayUsername";
+import { DisplayBio } from "../../components/displayBio";
 import { StyledContainer } from "../../components/main/mainWrapper";
 import { Nav } from "../../components/nav";
 import { SettingsForm } from "../../components/settingsForm";
-import { SettingsPfp } from "../../components/settingsPfp";
+import { DisplayRepos } from "../../components/displayGitHubRepos";
+import { DisplayGitHubActivity } from "../../components/displayGitHubActivity";
 
 export const Profile = () => {
   const [showForm, setShowForm] = useState(false);
@@ -15,9 +19,16 @@ export const Profile = () => {
     <>
       <Nav />
       <StyledContainer>
+        <DisplayPfp />
+        <DisplayUsername />
+        <DisplayBio />
+        <DisplayRepos />
+        <DisplayGitHubActivity />
+
+
         <button onClick={handleChange}>Edit</button>
 
-        {showForm && <SettingsForm close={handleChange}/>}
+        {showForm && <SettingsForm close={handleChange} />}
       </StyledContainer>
     </>
   );

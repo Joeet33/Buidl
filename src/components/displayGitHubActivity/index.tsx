@@ -1,7 +1,7 @@
 import GitHubCalendar from "react-github-calendar";
 import { useMoralis } from "react-moralis";
 
-export const GitHubActivity = () => {
+export const DisplayGitHubActivity = () => {
   const { Moralis, isInitialized, isAuthenticated } = useMoralis();
   const user = isInitialized ? Moralis.User.current() : undefined;
 

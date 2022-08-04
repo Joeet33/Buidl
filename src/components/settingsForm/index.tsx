@@ -1,5 +1,6 @@
 import { DisplayPfp } from "../displayPfp";
 import { SettingsBio } from "../settingsBio";
+import { GitHubSaveUser } from "../settingsGitHubSaveUser";
 import { SettingsUsername } from "../settingsUsername";
 import { FormWrapper } from "./index.styles";
 
@@ -13,11 +14,12 @@ export const SettingsForm = (props: Props) => {
       <button onClick={props.close}>X</button>
       <div>
         <DisplayPfp />
-        <img src=""></img>
+        <div>change image on click, load settingspfp</div>
       </div>
-
+      {/* make sure everything is saved to the backend at once */}
       <SettingsUsername />
       <SettingsBio />
+      <GitHubSaveUser />
     </FormWrapper>
   );
 };

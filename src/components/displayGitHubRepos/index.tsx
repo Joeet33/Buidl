@@ -3,7 +3,7 @@ import { RepositoriesList } from "../settingsGitHubRepos";
 
 //dont need this just display in profile
 
-export const SettingsDashboard = () => {
+export const DisplayRepos = () => {
   const { Moralis, isInitialized } = useMoralis();
   const user = isInitialized ? Moralis.User.current() : undefined;
 
