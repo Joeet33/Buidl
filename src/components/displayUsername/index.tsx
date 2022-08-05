@@ -5,5 +5,5 @@ export const DisplayUsername = () => {
 
   const user = isInitialized ? Moralis.User.current() : undefined;
 
-  return <> {user && <div>{user?.attributes?.username}</div>}</>;
+  return <div>Username: {user && user?.attributes?.username}</div>;
 };
