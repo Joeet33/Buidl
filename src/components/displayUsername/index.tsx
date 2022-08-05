@@ -1,9 +1,14 @@
 import { useMoralis } from "react-moralis";
+import { StyledUsername } from "./index.styles";
 
 export const DisplayUsername = () => {
   const { Moralis, isInitialized } = useMoralis();
 
   const user = isInitialized ? Moralis.User.current() : undefined;
 
-  return <div>Username: {user && user?.attributes?.username}</div>;
+  return (
+    <StyledUsername>
+      Username: {user && user?.attributes?.username}
+    </StyledUsername>
+  );
 };

@@ -8,7 +8,7 @@ import { SettingsForm } from "../../components/settingsForm";
 import { DisplayRepos } from "../../components/displayGitHubRepos";
 import { DisplayGitHubActivity } from "../../components/displayGitHubActivity";
 import { DisplayGitHubName } from "../../components/displayGitHubName";
-import { EditBtn, ProfileDetails } from "./index.styles";
+import { EditBtn, ProfileDetails, NameHeader } from "./index.styles";
 
 export const Profile = () => {
   const [showForm, setShowForm] = useState(false);
@@ -22,11 +22,16 @@ export const Profile = () => {
       <Nav />
       <StyledContainer>
         <ProfileDetails>
+          <NameHeader>
+            <DisplayUsername />
+            <DisplayUsername />
+          </NameHeader>
+
           <DisplayPfp />
           <EditBtn onClick={handleChange}>Edit Profile</EditBtn>
-          <DisplayUsername />
-          <DisplayBio />
+
           <DisplayGitHubName />
+          <DisplayBio />
         </ProfileDetails>
         {showForm && <SettingsForm close={handleChange} />}
 

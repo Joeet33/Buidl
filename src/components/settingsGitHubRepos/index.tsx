@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { IGitHubRepo } from "../../interfaces/IGitHubRepo";
+import { StyledList } from "./index.styles";
 
 export const RepositoriesList = (props: { repositoriesUrl: string }) => {
   const { repositoriesUrl } = props;
@@ -16,7 +17,7 @@ export const RepositoriesList = (props: { repositoriesUrl: string }) => {
     <div>
       {!repositoriesList.length && <p>No repositories found.</p>}
       {!!repositoriesList.length && (
-        <ul>
+        <StyledList>
           {repositoriesList.map((repository) => (
             <li key={repository.id}>
               <a href={repository.html_url} target="_blank" rel="noreferrer">
@@ -24,7 +25,7 @@ export const RepositoriesList = (props: { repositoriesUrl: string }) => {
               </a>
             </li>
           ))}
-        </ul>
+        </StyledList>
       )}
     </div>
   );
