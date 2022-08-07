@@ -9,9 +9,12 @@ import { DisplayRepos } from "../../components/displayGitHubRepos";
 import { DisplayGitHubActivity } from "../../components/displayGitHubActivity";
 import { DisplayGitHubName } from "../../components/displayGitHubName";
 import { EditBtn, ProfileDetails, NameHeader } from "./index.styles";
+import { useMoralis } from "react-moralis";
 
 export const Profile = () => {
   const [showForm, setShowForm] = useState(false);
+  const { Moralis, isInitialized, logout } = useMoralis();
+  const user = isInitialized ? Moralis.User.current() : undefined;
 
   const handleChange = () => {
     setShowForm(!showForm);
@@ -34,9 +37,9 @@ export const Profile = () => {
           <DisplayBio />
         </ProfileDetails>
         {showForm && <SettingsForm close={handleChange} />}
-
         <DisplayRepos />
         <DisplayGitHubActivity />
+        <button onClick={logout}>logout</button>
       </StyledContainer>
     </>
   );

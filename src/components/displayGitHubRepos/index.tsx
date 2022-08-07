@@ -7,9 +7,9 @@ export const DisplayRepos = () => {
 
   return (
     <>
-      <RepositoriesList
-        repositoriesUrl={user && user.attributes.github.repos_url}
-      />
+      {user?.attributes.github && (
+        <RepositoriesList repositoriesUrl={user.attributes.github.repos_url} />
+      )}
     </>
   );
 };

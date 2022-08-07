@@ -7,8 +7,8 @@ export const DisplayGitHubActivity = () => {
 
   return (
     <>
-      {isInitialized && (
-        <GitHubCalendar username={user && user?.attributes?.github?.login} />
+      {user?.attributes.github && (
+        <GitHubCalendar username={user?.attributes?.github?.login} />
       )}
     </>
   );

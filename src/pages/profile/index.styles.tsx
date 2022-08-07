@@ -13,7 +13,9 @@ export const EditBtn = styled.button`
 `;
 
 export const NameHeader = styled.div`
-  div: nth-of-type(2n) {
-    text-align: center;
+  div {
+    :nth-of-type(2n) {
+      text-align: center;
+    }
   }
 `;
