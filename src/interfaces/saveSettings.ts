@@ -1,4 +1,4 @@
 export interface SaveSettings {
-    handleUsernameChange:any;
-    handleBioChange:any;
+    handleUsernameChange:React.ChangeEventHandler<HTMLInputElement>;
+    handleBioChange:React.ChangeEventHandler<HTMLInputElement>;
   }

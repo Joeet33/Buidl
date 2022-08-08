@@ -18,11 +18,11 @@ export const SettingsForm = (props: Props) => {
   const user = isInitialized ? Moralis.User.current() : undefined;
 
 
-  const handleUsernameChange = (e:any) => {
+  const handleUsernameChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value)
   }
 
-  const handleBioChange = (e:any) => {
+  const handleBioChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setBio(e.target.value)
   }
 
