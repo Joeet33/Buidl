@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { useMoralis } from "react-moralis";
+import { CloseForm } from "../../interfaces/closeForm";
 import { DisplayPfp } from "../displayPfp";
 import { SettingsBio } from "../settingsBio";
 import { GitHubSaveUser } from "../settingsGitHubSaveUser";
 import { SettingsUsername } from "../settingsUsername";
 import { FormWrapper } from "./index.styles";
 
-interface Props {
-  close: React.MouseEventHandler<HTMLButtonElement>;
-}
-
-export const SettingsForm = (props: Props) => {
+export const SettingsForm = (props: CloseForm) => {
 
   const [username, setUsername] = useState("");
   const [bio, setBio] = useState("");
