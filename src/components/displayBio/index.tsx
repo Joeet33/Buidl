@@ -5,5 +5,5 @@ export const DisplayBio = () => {
 
   const user = isInitialized ? Moralis.User.current() : undefined;
 
-  return <div>Bio: {user && user?.attributes?.bio}</div>;
+  return <div>{user && user?.attributes?.bio}</div>;
 };

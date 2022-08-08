@@ -1,7 +1,4 @@
 import { useMoralis } from "react-moralis";
-import { RepositoriesList } from "../settingsGitHubRepos";
-
-//dont need this just display in profile
 
 export const DisplayGitHubName = () => {
   const { Moralis, isInitialized } = useMoralis();
@@ -10,7 +7,9 @@ export const DisplayGitHubName = () => {
   return (
     <>
       {user?.attributes.github && (
-        <div>Github name: {user.attributes.github.login}</div>
+        <div>
+          Github name: <br></br> {user.attributes.github.login}
+        </div>
       )}
     </>
   );

@@ -8,7 +8,15 @@ import { SettingsForm } from "../../components/settingsForm";
 import { DisplayRepos } from "../../components/displayGitHubRepos";
 import { DisplayGitHubActivity } from "../../components/displayGitHubActivity";
 import { DisplayGitHubName } from "../../components/displayGitHubName";
-import { EditBtn, ProfileDetails, NameHeader } from "./index.styles";
+import {
+  ProfileDetails,
+  EditBtn,
+  ActivityDetails,
+  RepoDetails,
+  FlexBoxName,
+  FlexBoxBio,
+  FlexBoxPfp,
+} from "./index.styles";
 import { useMoralis } from "react-moralis";
 
 export const Profile = () => {
@@ -25,20 +33,31 @@ export const Profile = () => {
       <Nav />
       <StyledContainer>
         <ProfileDetails>
-          <NameHeader>
+          <FlexBoxName>
             <DisplayUsername />
-            <DisplayUsername />
-          </NameHeader>
+          </FlexBoxName>
+          <FlexBoxBio>
+            <DisplayBio />
+          </FlexBoxBio>
 
-          <DisplayPfp />
-          <EditBtn onClick={handleChange}>Edit Profile</EditBtn>
-
-          <DisplayGitHubName />
-          <DisplayBio />
+          <FlexBoxPfp>
+            <DisplayPfp />
+          </FlexBoxPfp>
+          <EditBtn>
+            <button onClick={handleChange}>Edit Profile</button>
+          </EditBtn>
         </ProfileDetails>
+
         {showForm && <SettingsForm close={handleChange} />}
-        <DisplayRepos />
-        <DisplayGitHubActivity />
+
+        <RepoDetails>
+          <DisplayGitHubName />
+          <DisplayRepos />
+        </RepoDetails>
+        <ActivityDetails>
+          <DisplayGitHubActivity />
+        </ActivityDetails>
+
         <button onClick={logout}>logout</button>
       </StyledContainer>
     </>
