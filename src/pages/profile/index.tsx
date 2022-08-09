@@ -22,6 +22,7 @@ import { useMoralis } from "react-moralis";
 import { DisplayPreviousJob } from "../../components/displayPreviousJob";
 import { DisplayCurrentJob } from "../../components/displayCurrentJob";
 import { DisplayEmploymentStatus } from "../../components/displayEmploymentStatus";
+import { GitHubLogin } from "../../components/gitHubLogin";
 
 export const Profile = () => {
   const [showForm, setShowForm] = useState(false);
@@ -69,7 +70,7 @@ export const Profile = () => {
             </ActivityDetails>{" "}
           </>
         ) : (
-          <div>Login to github</div>
+          <GitHubLogin />
         )}
       </StyledContainer>
     </>

@@ -12,10 +12,10 @@ export const Nav = () => {
 
       <ul>
         <li>
-          <Link to="/">Apply</Link>
+          <Link to="">Apply</Link>
         </li>
         <li>
-          <Link to="/">Browse</Link>
+          <Link to="">Browse</Link>
         </li>
         <li>
           <Link to={ROUTER_PATHS.PROFILE}>Profile</Link>
