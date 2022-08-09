@@ -4,13 +4,13 @@ import { DisplayUsername } from "../../components/displayUsername";
 import { DisplayBio } from "../../components/displayBio";
 import { StyledContainer } from "../../components/main/mainWrapper";
 import { Nav } from "../../components/nav";
-import { SettingsForm } from "../../components/settingsForm";
+import { DisplayForm } from "../../components/displayForm";
 import { DisplayRepos } from "../../components/displayGitHubRepos";
 import { DisplayGitHubActivity } from "../../components/displayGitHubActivity";
 import { DisplayGitHubName } from "../../components/displayGitHubName";
 import {
   ProfileDetails,
-  EditBtn,
+  BtnContainer,
   ActivityDetails,
   RepoDetails,
   FlexBox1,
@@ -22,15 +22,22 @@ import { useMoralis } from "react-moralis";
 import { DisplayPreviousJob } from "../../components/displayPreviousJob";
 import { DisplayCurrentJob } from "../../components/displayCurrentJob";
 import { DisplayEmploymentStatus } from "../../components/displayEmploymentStatus";
-import { GitHubLogin } from "../../components/gitHubLogin";
+import { GitHubLogin } from "../../components/displayGitHubLogin";
+import { EditForm } from "../../components/displayEditForm";
+import { GitHubForm } from "../../components/displayGitHubForm";
 
 export const Profile = () => {
-  const [showForm, setShowForm] = useState(false);
   const { Moralis, isInitialized } = useMoralis();
   const user = isInitialized ? Moralis.User.current() : undefined;
+  const [showForm, setShowForm] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
   const handleChange = () => {
     setShowForm(!showForm);
+  };
+
+  const handleLoginChange = () => {
+    setShowLogin(!showLogin);
   };
 
   return (
@@ -51,13 +58,14 @@ export const Profile = () => {
               {user?.attributes.currentJob && <DisplayCurrentJob />}
               {user?.attributes.previousJob && <DisplayPreviousJob />}
             </FlexBox4>
-            <EditBtn>
-              <button onClick={handleChange}>Edit Profile</button>
-            </EditBtn>
+            <BtnContainer>
+              <EditForm formChange={handleChange} />
+            </BtnContainer>
           </FlexBox3>
         </ProfileDetails>
 
-        {showForm && <SettingsForm close={handleChange} />}
+        {showForm && <DisplayForm formChange={handleChange} />}
+        {showLogin && <GitHubForm loginChange={handleLoginChange} />}
 
         {user?.attributes.github ? (
           <>
@@ -67,10 +75,10 @@ export const Profile = () => {
             </RepoDetails>
             <ActivityDetails>
               <DisplayGitHubActivity />
-            </ActivityDetails>{" "}
+            </ActivityDetails>
           </>
         ) : (
-          <GitHubLogin />
+          <GitHubLogin loginChange={handleLoginChange} />
         )}
       </StyledContainer>
     </>

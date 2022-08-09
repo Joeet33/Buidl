@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useMoralis } from "react-moralis";
-import { CloseForm } from "../../interfaces/closeForm";
+import { FormChange } from "../../interfaces/formChange";
 import { DisplayPfp } from "../displayPfp";
 import { SettingsBio } from "../settingsBio";
 import { SettingsCurrentJob } from "../settingsCurrentJob";
@@ -10,7 +10,7 @@ import { SettingsPreviousJob } from "../settingsPreviousJob";
 import { SettingsUsername } from "../settingsUsername";
 import { FormWrapper } from "./index.styles";
 
-export const SettingsForm = (props: CloseForm) => {
+export const DisplayForm = (props: FormChange) => {
   const [username, setUsername] = useState("");
   const [bio, setBio] = useState("");
   const [currentJob, setcurrentJob] = useState("");
@@ -76,7 +76,7 @@ export const SettingsForm = (props: CloseForm) => {
 
   return (
     <FormWrapper>
-      <button onClick={props.close}>X</button>
+      <button onClick={props.formChange}>X</button>
       <div>
         <DisplayPfp />
         <div>change image on click, load settingspfp</div>
@@ -87,7 +87,6 @@ export const SettingsForm = (props: CloseForm) => {
       <SettingsPreviousJob {...edits} />
       <SettingsCurrentJob {...edits} />
       <button onClick={saveEdits}>SaveTest</button>
-      <GitHubSaveUser />
     </FormWrapper>
   );
 };

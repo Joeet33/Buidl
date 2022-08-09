@@ -58,6 +58,6 @@ export const FlexBox4 = styled.div`
   position: relative;
 `;
 
-export const EditBtn = styled.div`
+export const BtnContainer = styled.div`
   margin-left: auto;
 `;
