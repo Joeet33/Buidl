@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 
 export const StyledList = styled.ul`
   display: flex;

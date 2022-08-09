@@ -36,7 +36,7 @@ export const FlexBoxName = styled.div`
 `;
 
 export const FlexBoxBio = styled.div`
-  left: 15vw;
+  padding-left: 15vw;
   top: 3vh;
   position: relative;
 `;
@@ -47,5 +47,5 @@ export const FlexBoxPfp = styled.div`
 `;
 
 export const EditBtn = styled.div`
-  text-align:right;
+  text-align: right;
 `;
