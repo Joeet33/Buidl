@@ -31,28 +31,31 @@ export const ActivityDetails = styled.div`
   margin-bottom: 2vh;
 `;
 
-export const FlexBoxName = styled.div`
-  text-align: center;
-`;
-
-export const FlexBoxBio = styled.div`
-  padding-left: 17.5vw;
-  top: 3vh;
-  position: relative;
-`;
-
-export const FlexBoxPfp = styled.div`
-  position: relative;
-  left: auto;
-  bottom: 4vh;
-`;
-
-export const FlexBoxEmploymentStatus = styled.div`
-  position: relative;
-`;
-
-export const FlexBox = styled.div`
+export const FlexBox1 = styled.div`
   display: flex;
+`;
+
+export const FlexBox2 = styled.div`
+  padding-left: 6vw;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 1vh;
+  div {
+    :nth-of-type(2n) {
+      padding-top: 2vh;
+      text-align: left;
+    }
+  }
+`;
+
+export const FlexBox3 = styled.div`
+  display: flex;
+  padding-top: 3vh;
+`;
+
+export const FlexBox4 = styled.div`
+  position: relative;
 `;
 
 export const EditBtn = styled.div`

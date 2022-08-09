@@ -13,17 +13,19 @@ import {
   EditBtn,
   ActivityDetails,
   RepoDetails,
-  FlexBoxName,
-  FlexBoxBio,
-  FlexBoxPfp,
-  FlexBoxEmploymentStatus,
-  FlexBox,
+  FlexBox1,
+  FlexBox2,
+  FlexBox3,
+  FlexBox4,
 } from "./index.styles";
 import { useMoralis } from "react-moralis";
+import { DisplayPreviousJob } from "../../components/displayPreviousJob";
+import { DisplayCurrentJob } from "../../components/displayCurrentJob";
+import { DisplayEmploymentStatus } from "../../components/displayEmploymentStatus";
 
 export const Profile = () => {
   const [showForm, setShowForm] = useState(false);
-  const { Moralis, isInitialized, logout } = useMoralis();
+  const { Moralis, isInitialized } = useMoralis();
   const user = isInitialized ? Moralis.User.current() : undefined;
 
   const handleChange = () => {
@@ -35,26 +37,23 @@ export const Profile = () => {
       <Nav />
       <StyledContainer>
         <ProfileDetails>
-          <FlexBoxName>
-            <DisplayUsername />
-          </FlexBoxName>
-          <FlexBoxBio>
-            <DisplayBio />
-          </FlexBoxBio>
-
-          <FlexBoxPfp>
+          <FlexBox1>
             <DisplayPfp />
-          </FlexBoxPfp>
-          <FlexBox>
-            <FlexBoxEmploymentStatus>
-              <div>Employment Status</div>
-              <div>Current Company</div>
-              <div>Previous Company</div>
-            </FlexBoxEmploymentStatus>
+            <FlexBox2>
+              <DisplayUsername />
+              <DisplayBio />
+            </FlexBox2>
+          </FlexBox1>
+          <FlexBox3>
+            <FlexBox4>
+              {user?.attributes.employmentStatus && <DisplayEmploymentStatus />}
+              {user?.attributes.currentJob && <DisplayCurrentJob />}
+              {user?.attributes.previousJob && <DisplayPreviousJob />}
+            </FlexBox4>
             <EditBtn>
               <button onClick={handleChange}>Edit Profile</button>
             </EditBtn>
-          </FlexBox>
+          </FlexBox3>
         </ProfileDetails>
 
         {showForm && <SettingsForm close={handleChange} />}
@@ -72,8 +71,6 @@ export const Profile = () => {
         ) : (
           <div>Login to github</div>
         )}
-
-        <button onClick={logout}>logout</button>
       </StyledContainer>
     </>
   );
