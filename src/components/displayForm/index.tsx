@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useMoralis } from "react-moralis";
+import { Link } from "react-router-dom";
 import { FormChange } from "../../interfaces/formChange";
 import { DisplayPfp } from "../displayPfp";
 import { SettingsBio } from "../settingsBio";
 import { SettingsCurrentJob } from "../settingsCurrentJob";
+import { SettingsEditPfp } from "../settingsEditPfp";
 import { SettingsEmploymentStatus } from "../settingsEmploymentStatus";
 import { GitHubSaveUser } from "../settingsGitHubSaveUser";
 import { SettingsPreviousJob } from "../settingsPreviousJob";
@@ -77,10 +79,10 @@ export const DisplayForm = (props: FormChange) => {
   return (
     <FormWrapper>
       <button onClick={props.formChange}>X</button>
-      <div>
-        <DisplayPfp />
-        <div>change image on click, load settingspfp</div>
-      </div>
+    
+      <SettingsEditPfp />
+    
+
       <SettingsUsername {...edits} />
       <SettingsBio {...edits} />
       <SettingsEmploymentStatus {...edits} />
