@@ -8,7 +8,10 @@ export const DisplayGitHubActivity = () => {
   return (
     <>
       {user?.attributes.github && (
-        <GitHubCalendar username={user?.attributes?.github?.login} />
+        <GitHubCalendar
+          username={user?.attributes?.github?.login}
+          style={{ margin: "auto" }}
+        />
       )}
     </>
   );

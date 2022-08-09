@@ -16,6 +16,8 @@ import {
   FlexBoxName,
   FlexBoxBio,
   FlexBoxPfp,
+  FlexBoxEmploymentStatus,
+  FlexBox,
 } from "./index.styles";
 import { useMoralis } from "react-moralis";
 
@@ -43,20 +45,33 @@ export const Profile = () => {
           <FlexBoxPfp>
             <DisplayPfp />
           </FlexBoxPfp>
-          <EditBtn>
-            <button onClick={handleChange}>Edit Profile</button>
-          </EditBtn>
+          <FlexBox>
+            <FlexBoxEmploymentStatus>
+              <div>Employment Status</div>
+              <div>Current Company</div>
+              <div>Previous Company</div>
+            </FlexBoxEmploymentStatus>
+            <EditBtn>
+              <button onClick={handleChange}>Edit Profile</button>
+            </EditBtn>
+          </FlexBox>
         </ProfileDetails>
 
         {showForm && <SettingsForm close={handleChange} />}
 
-        <RepoDetails>
-          <DisplayGitHubName />
-          <DisplayRepos />
-        </RepoDetails>
-        <ActivityDetails>
-          <DisplayGitHubActivity />
-        </ActivityDetails>
+        {user?.attributes.github ? (
+          <>
+            <RepoDetails>
+              <DisplayGitHubName />
+              <DisplayRepos />
+            </RepoDetails>
+            <ActivityDetails>
+              <DisplayGitHubActivity />
+            </ActivityDetails>{" "}
+          </>
+        ) : (
+          <div>Login to github</div>
+        )}
 
         <button onClick={logout}>logout</button>
       </StyledContainer>
