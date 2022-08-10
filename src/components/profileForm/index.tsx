@@ -1,6 +1,5 @@
 import { Children, useState } from "react";
 import { useMoralis } from "react-moralis";
-import { closeModal } from "../../interfaces/closeModal";
 import { ModalProps } from "../../interfaces/modalProps";
 import { SaveSettings } from "../../interfaces/saveSettings";
 import { SettingsBio } from "../settingsBio";
@@ -11,7 +10,7 @@ import { SettingsPreviousJob } from "../settingsPreviousJob";
 import { SettingsUsername } from "../settingsUsername";
 import { FormWrapper } from "./index.styles";
 
-export const FormCard = ({closeModal}: closeModal) => {
+export const FormCard = () => {
   const [username, setUsername] = useState("");
   const [bio, setBio] = useState("");
   const [currentJob, setcurrentJob] = useState("");

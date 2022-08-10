@@ -1,5 +1,5 @@
 import { useMoralis } from "react-moralis";
-import { RepositoriesList } from "../settingsGitHubRepos";
+import { RepositoriesList } from "../reposGitHubHorizontalScroll";
 
 export const DisplayRepos = () => {
   const { Moralis, isInitialized } = useMoralis();

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMoralis } from "react-moralis";
 import { PfpChange } from "../../interfaces/pfpChange";
-import { PfpForm } from "../displayPfpForm";
+import { PfpForm } from "../pfpForm";
 import { DisplayForm } from "../modalPopup";
 import { PfpStyle } from "../settingsPfp/index.style";
 

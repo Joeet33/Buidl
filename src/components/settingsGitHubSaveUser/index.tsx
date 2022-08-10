@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import axios from "axios";
 import { IGitHubUser } from "../../interfaces/IGitHubUser";
-import { RepositoriesList } from "../settingsGitHubRepos";
+import { RepositoriesList } from "../reposGitHubHorizontalScroll";
 import { useMoralis } from "react-moralis";
 
 export const GitHubSaveUser = () => {

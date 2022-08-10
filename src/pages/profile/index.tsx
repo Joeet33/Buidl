@@ -22,12 +22,12 @@ import { useMoralis } from "react-moralis";
 import { DisplayPreviousJob } from "../../components/displayPreviousJob";
 import { DisplayCurrentJob } from "../../components/displayCurrentJob";
 import { DisplayEmploymentStatus } from "../../components/displayEmploymentStatus";
-import { GitHubLogin } from "../../components/displayGitHubLogin";
+import { GitHubLogin } from "../../components/gitHubNotLoggedIn";
 // import { EditForm } from "../../components/displayEditForm";
-import { GitHubForm } from "../../components/displayGitHubForm";
+import { GitHubForm } from "../../components/gitHubForm";
 import { ModalContainer } from "../../components/modalPopup/index.styles";
 import { DisplayForm } from "../../components/modalPopup";
-import { FormCard } from "../../components/displayForm";
+import { FormCard } from "../../components/profileForm";
 
 export const Profile = () => {
   const { Moralis, isInitialized } = useMoralis();
@@ -70,13 +70,13 @@ export const Profile = () => {
 
         {showForm && (
           <DisplayForm onClickClose={handleFormChange}>
-            <FormCard closeModal={handleFormChange} />
+            <FormCard />
           </DisplayForm>
         )}
 
         {showLogin && (
           <DisplayForm onClickClose={handleLoginChange}>
-            <GitHubForm loginChange={handleLoginChange} />
+            <GitHubForm />
           </DisplayForm>
         )}
 

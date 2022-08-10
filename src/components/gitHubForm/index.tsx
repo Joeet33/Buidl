@@ -1,8 +1,7 @@
-import { LoginChange } from "../../interfaces/loginChange";
 import { GitHubSaveUser } from "../settingsGitHubSaveUser";
 import { Wrapper } from "./index.styles";
 
-export const GitHubForm = (props: LoginChange) => {
+export const GitHubForm = () => {
   return (
     <Wrapper>
       <GitHubSaveUser />

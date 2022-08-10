@@ -1,4 +1,4 @@
-import { Connect } from "../../components/connect";
+import { Connect } from "../../components/connectForm";
 import { SignupContainer } from "./index.style";
 
 export const Signup = () => {
