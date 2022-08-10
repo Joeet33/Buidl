@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useMoralis } from "react-moralis";
 import { PfpChange } from "../../interfaces/pfpChange";
 import { PfpForm } from "../displayPfpForm";
+import { DisplayForm } from "../modalPopup";
 import { PfpStyle } from "../settingsPfp/index.style";
 
 export const SettingsEditPfp = () => {
@@ -21,7 +22,12 @@ export const SettingsEditPfp = () => {
           src={user?.attributes?.pfp}
         ></PfpStyle>
       )}
-      {showPfpSelect && <PfpForm pfpChange={handlePfpChange}/>}
+
+      {showPfpSelect && (
+        <DisplayForm onClickClose={handlePfpChange}>
+          <PfpForm pfpChange={handlePfpChange} />
+        </DisplayForm>
+      )}
     </>
   );
 };

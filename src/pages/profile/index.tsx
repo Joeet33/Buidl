@@ -1,4 +1,4 @@
-import {  useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DisplayPfp } from "../../components/displayPfp";
 import { DisplayUsername } from "../../components/displayUsername";
 import { DisplayBio } from "../../components/displayBio";
@@ -27,21 +27,20 @@ import { GitHubLogin } from "../../components/displayGitHubLogin";
 import { GitHubForm } from "../../components/displayGitHubForm";
 import { ModalContainer } from "../../components/modalPopup/index.styles";
 import { DisplayForm } from "../../components/modalPopup";
+import { FormCard } from "../../components/displayForm";
 
 export const Profile = () => {
   const { Moralis, isInitialized } = useMoralis();
   const user = isInitialized ? Moralis.User.current() : undefined;
-  const [showForm, setShowForm] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
-  const ref = {useRef}
-  
-
-  const handleChange = () => {
-    setShowForm(!showForm);
-  };
+  const [showForm, setShowForm] = useState(false);
 
   const handleLoginChange = () => {
     setShowLogin(!showLogin);
+  };
+
+  const handleFormChange = () => {
+    setShowForm(!showForm);
   };
 
   return (
@@ -64,15 +63,22 @@ export const Profile = () => {
             </FlexBox4>
             <BtnContainer>
               {/* <EditForm formChange={handleChange} /> */}
-              <button onClick={handleChange}>Edit Profile</button>
+              <button onClick={handleFormChange}>Edit Profile</button>
             </BtnContainer>
           </FlexBox3>
         </ProfileDetails>
 
-        {showForm && <DisplayForm onClickClose={handleChange}>
-          <DisplayPfp />
-        </DisplayForm>}
-        {showLogin && <GitHubForm loginChange={handleLoginChange} />}
+        {showForm && (
+          <DisplayForm onClickClose={handleFormChange}>
+            <FormCard closeModal={handleFormChange} />
+          </DisplayForm>
+        )}
+
+        {showLogin && (
+          <DisplayForm onClickClose={handleLoginChange}>
+            <GitHubForm loginChange={handleLoginChange} />
+          </DisplayForm>
+        )}
 
         {user?.attributes.github ? (
           <>

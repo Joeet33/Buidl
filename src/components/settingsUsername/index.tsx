@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useMoralis } from "react-moralis";
 import { SaveSettings } from "../../interfaces/saveSettings";
 
-export const SettingsUsername = (edits: SaveSettings) => {
+export const SettingsUsername = ({handleUsernameChange}: SaveSettings) => {
   const { Moralis, isInitialized } = useMoralis();
   const user = isInitialized ? Moralis.User.current() : undefined;
 
@@ -13,7 +13,7 @@ export const SettingsUsername = (edits: SaveSettings) => {
           name="NameChange"
           width="100%"
           placeholder={user?.attributes?.username}
-          onChange={edits.handleUsernameChange}
+          onChange={handleUsernameChange}
         />
       </div>
     </>
