@@ -5,5 +5,5 @@ export const DisplayCurrentJob = () => {
 
   const user = isInitialized ? Moralis.User.current() : undefined;
 
-  return <div>Current Work: {user && user?.attributes?.currentJob}</div>;
+  return <div>Current Company: {user && user?.attributes?.currentJob}</div>;
 };
