@@ -1,7 +1,5 @@
-import { Children, useState } from "react";
+import { useState } from "react";
 import { useMoralis } from "react-moralis";
-import { ModalProps } from "../../interfaces/modalProps";
-import { SaveSettings } from "../../interfaces/saveSettings";
 import { SettingsBio } from "../settingsBio";
 import { SettingsCurrentJob } from "../settingsCurrentJob";
 import { SettingsEditPfp } from "../settingsEditPfp";
@@ -19,21 +17,21 @@ export const FormCard = () => {
   const { Moralis } = useMoralis();
 
 
-  const handleUsernameChange = (e:any) => {
+  const handleUsernameChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
   };
 
-  const handleBioChange = (e:any) => {
+  const handleBioChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setBio(e.target.value);
   };
 
-  const handleCurrentChange = (e:any) => {
+  const handleCurrentChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setcurrentJob(e.target.value);
   };
-  const handlePreviousChange = (e:any) => {
+  const handlePreviousChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setpreviousJob(e.target.value);
   };
-  const handleStatusChange = (e:any) => {
+  const handleStatusChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setemploymentStatus(e.target.value);
   };
 
