@@ -11,6 +11,7 @@ export const DisplayContactForm = () => {
   return (
     <>
       <DisplayContactsContainer>
+        <div>Contacts</div>
         <Flexbox>
           {user?.attributes.twitter ? (
             <DisplayTwitter />

@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import axios from "axios";
 import { IGitHubUser } from "../../interfaces/IGitHubUser";
 import { useMoralis } from "react-moralis";
@@ -42,6 +42,11 @@ export const SettingsGitHubUser = () => {
     }
   };
 
+
+  useEffect(() => {
+    saveEdits()
+  }, [searchForUser, isInitialized]);
+
   return (
     <>
       <h2>Search for a user</h2>
@@ -51,7 +56,7 @@ export const SettingsGitHubUser = () => {
           onChange={(e) => setUserSearch(e.target.value)}
           placeholder="Enter a username..."
         />
-        <button onClick={saveEdits}>Search</button>
+        <button>Search</button>
       </form>
     </>
   );

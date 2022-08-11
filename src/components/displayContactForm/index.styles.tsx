@@ -8,6 +8,7 @@ export const DisplayContactsContainer = styled.div`
   box-shadow: 0 0px 0px 0 black, 0 0px 1px 0 black;
   border-radius: 1vw;
   margin-bottom: 2vh;
+  text-align: center;
 `;
 
 export const Flexbox = styled.div`
