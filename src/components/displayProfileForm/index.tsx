@@ -1,7 +1,7 @@
 import { useMoralis } from "react-moralis";
 import { DisplayBio } from "../displayBio";
 import { DisplayCurrentJob } from "../displayCurrentJob";
-import { DisplayEmploymentStatus } from "../displayEmploymentStatus";
+import { DisplayEmploymentRole } from "../displayEmploymentRole";
 import { DisplayPfp } from "../displayPfp";
 import { DisplayPreviousJob } from "../displayPreviousJob";
 import { DisplayUsername } from "../displayUsername";
@@ -33,9 +33,21 @@ export const DisplayProfileForm = ({ editProfile }: Props) => {
       </FlexBox1>
       <FlexBox3>
         <FlexBox4>
-          {user?.attributes.employmentStatus && <DisplayEmploymentStatus />}
-          {user?.attributes.currentJob && <DisplayCurrentJob />}
-          {user?.attributes.previousJob && <DisplayPreviousJob />}
+          {user?.attributes.employmentRole ? (
+            <DisplayEmploymentRole />
+          ) : (
+            <div>Employment Role</div>
+          )}
+          {user?.attributes.currentJob ? (
+            <DisplayCurrentJob />
+          ) : (
+            <div>Current Company</div>
+          )}
+          {user?.attributes.previousJob ? (
+            <DisplayPreviousJob />
+          ) : (
+            <div>Previous Company</div>
+          )}
         </FlexBox4>
         <BtnContainer>
           <button onClick={editProfile}>Edit Profile</button>

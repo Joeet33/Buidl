@@ -11,6 +11,10 @@ import { GitHubForm } from "../../components/gitHubForm";
 import { DisplayForm } from "../../components/modalPopup";
 import { FormCard } from "../../components/settingsProfileForm";
 import { DisplayProfileForm } from "../../components/displayProfileForm";
+import { DisplayTwitter } from "../../components/displayTwitter";
+import { DisplayTelegram } from "../../components/displayTelegram";
+import { DisplayDiscord } from "../../components/displayDiscord";
+import { DisplayContactForm } from "../../components/displayContactForm";
 
 export const Profile = () => {
   const { Moralis, isInitialized } = useMoralis();
@@ -43,6 +47,8 @@ export const Profile = () => {
             <GitHubForm />
           </DisplayForm>
         )}
+
+        <DisplayContactForm />
 
         {user?.attributes.github ? (
           <>

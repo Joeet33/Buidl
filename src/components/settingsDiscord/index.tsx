@@ -1,7 +1,7 @@
 import { useMoralis } from "react-moralis";
 import { SaveSettings } from "../../interfaces/saveSettings";
 
-export const SettingsEmploymentStatus = (edits: SaveSettings) => {
+export const SettingsDiscord = ({ handleDiscordChange }: SaveSettings) => {
   const { Moralis, isInitialized } = useMoralis();
   const user = isInitialized ? Moralis.User.current() : undefined;
 
@@ -11,8 +11,8 @@ export const SettingsEmploymentStatus = (edits: SaveSettings) => {
         <input
           name="NameChange"
           width="100%"
-          placeholder={user?.attributes?.employmentRole}
-          onChange={edits.handleRoleChange}
+          placeholder={user?.attributes?.discord}
+          onChange={handleDiscordChange}
         />
       </div>
     </>
