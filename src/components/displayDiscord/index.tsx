@@ -8,7 +8,11 @@ export const DisplayDiscord = () => {
 
   return (
     <StyledContacts>
-      <img src={"https://sparkcdnwus2.azureedge.net/sparkimageassets/XPDC2RH70K22MN-08afd558-a61c-4a63-9171-d3f199738e9f"}></img>
+      <img
+        src={
+          "https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Circle-1024x1024.png"
+        }
+      ></img>
       <div>{user && user?.attributes?.discord}</div>
     </StyledContacts>
   );

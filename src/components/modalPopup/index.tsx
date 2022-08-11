@@ -1,14 +1,17 @@
 import { ModalProps } from "../../interfaces/modalProps";
 
-import { FormContainer, ModalContainer } from "./index.styles";
+import { ModalContainer, StyledCard } from "./index.styles";
+
+
+
 
 export const DisplayForm = ({ onClickClose, children }: ModalProps) => {
   return (
     <ModalContainer onClick={onClickClose}>
-      <FormContainer onClick={(e) => e.stopPropagation()}>
+      <StyledCard onClick={(e) => e.stopPropagation()}>
         <button onClick={onClickClose}>X</button>
         {children}
-      </FormContainer>
+      </StyledCard>
     </ModalContainer>
   );
 };

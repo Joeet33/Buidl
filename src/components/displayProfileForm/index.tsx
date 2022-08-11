@@ -24,7 +24,7 @@ export const DisplayProfileForm = ({ editProfile }: Props) => {
   const user = isInitialized ? Moralis.User.current() : undefined;
 
   return (
-    <DisplayProfileContainer>
+    <DisplayProfileContainer >
       <FlexBox1>
         {user?.attributes.pfp ? (
           <DisplayPfp />

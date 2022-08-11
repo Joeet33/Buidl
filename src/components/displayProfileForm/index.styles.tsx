@@ -1,13 +1,15 @@
 import styled from "styled-components";
+import Card from "@mui/material/Card";
 
-export const DisplayProfileContainer = styled.div`
+export const DisplayProfileContainer = styled(Card)`
   padding-left: 2vw;
   padding-right: 2vw;
   padding-top: 1vh;
   padding-bottom: 1vh;
-  box-shadow: 0 0px 0px 0 black, 0 0px 1px 0 black;
   border-radius: 1vw;
   margin-bottom: 2vh;
+  position: relative;
+  top: 1vh;
 `;
 
 export const FlexBox1 = styled.div`
@@ -21,9 +23,14 @@ export const FlexBox2 = styled.div`
   text-align: center;
   padding-top: 1vh;
   div {
+    :nth-of-type(n) {
+      right: 15%;
+      position: relative;
+    }
     :nth-of-type(2n) {
       padding-top: 2vh;
       text-align: left;
+      left: 0%;
     }
   }
 `;
