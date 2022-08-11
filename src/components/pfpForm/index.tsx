@@ -1,14 +1,14 @@
 import { PfpChange } from "../../interfaces/pfpChange";
 import { SettingsPfp } from "../settingsPfp";
-import { FormWrapper } from "./index.styles";
+import { PfpContainer } from "./index.styles";
 
 export const PfpForm = (pfpChange: PfpChange) => {
   return (
     <>
-      <FormWrapper>
+      <PfpContainer>
         <button onClick={pfpChange.pfpChange}>X</button>
         <SettingsPfp />
-      </FormWrapper>
+      </PfpContainer>
     </>
   );
 };

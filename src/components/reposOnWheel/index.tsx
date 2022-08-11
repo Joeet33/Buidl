@@ -2,7 +2,10 @@ import { VisibilityContext } from "react-horizontal-scrolling-menu";
 
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
-export const onWheel = (apiObj: scrollVisibilityApiType, ev: React.WheelEvent): void => {
+export const onWheel = (
+  apiObj: scrollVisibilityApiType,
+  ev: React.WheelEvent
+): void => {
   const isThouchpad = Math.abs(ev.deltaX) !== 0 || Math.abs(ev.deltaY) < 15;
 
   if (isThouchpad) {
@@ -15,4 +18,4 @@ export const onWheel = (apiObj: scrollVisibilityApiType, ev: React.WheelEvent): 
   } else if (ev.deltaY > 0) {
     apiObj.scrollPrev();
   }
-}
+};

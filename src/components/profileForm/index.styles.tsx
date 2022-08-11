@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FormWrapper = styled.div`
+export const ProfileContainer = styled.div`
   position: absolute;
   z-index: 1;
 `;

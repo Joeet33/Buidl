@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { PfpSelectProps } from "../../interfaces/stylePfpSelect";
 
-export const PfpOptions = styled.div`
+export const PfpContainer = styled.div`
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
@@ -8,22 +9,10 @@ export const PfpOptions = styled.div`
   gap: 30px;
 `;
 
-interface Props {
-  active: string | undefined | boolean;
-}
-
-export const PfpOption = styled.img<Props>`
+export const PfpSelection = styled.img<PfpSelectProps>`
   border-radius: 50%;
   margin-top: 10px;
   width: 110px;
   height: 110px;
   border: ${(props) => (props.active ? "5px solid #1da1f2" : "5px")};
-`;
-
-export const PfpStyle = styled.img`
-  border-radius: 50%;
-  margin-top: 10px;
-  width: 110px;
-  height: 110px;
-  border: 5px;
 `;

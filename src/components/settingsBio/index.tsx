@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { useMoralis } from "react-moralis";
 import { SaveSettings } from "../../interfaces/saveSettings";
 
-export const SettingsBio = (edits:SaveSettings) => {
+export const SettingsBio = (edits: SaveSettings) => {
   const { Moralis, isInitialized } = useMoralis();
   const user = isInitialized ? Moralis.User.current() : undefined;
 

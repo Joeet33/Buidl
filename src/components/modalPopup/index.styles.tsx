@@ -10,7 +10,7 @@ export const ModalContainer = styled.div`
   display: flex;
 `;
 
-export const StyledModal = styled.div`
+export const FormContainer = styled.div`
   width: 500px;
   height: 500px;
   margin: auto;

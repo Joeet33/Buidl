@@ -1,10 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IGitHubRepo } from "../../interfaces/IGitHubRepo";
-import { StyledList } from "./index.styles";
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+import { ScrollMenu } from "react-horizontal-scrolling-menu";
 import { LeftArrow, RightArrow } from "../reposArrows";
-import { Card } from "../reposCard";
+import { ReposCard } from "../reposCard";
 import usePreventBodyScroll from "../reposBodyScroll";
 import "./hideScrollbar.css";
 import { onWheel } from "../reposOnWheel";
@@ -32,7 +31,7 @@ export const RepositoriesList = (props: { repositoriesUrl: string }) => {
             onWheel={onWheel}
           >
             {repositoriesList.map((repository) => (
-              <Card
+              <ReposCard
                 title={repository.name}
                 repo_url={repository.html_url} // NOTE: itemId is required for track items
                 key={repository.id}

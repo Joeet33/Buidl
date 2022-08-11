@@ -2,7 +2,7 @@ import React from "react";
 
 // use this for mobile version
 
-export default function useDrag() {
+export const useDrag = () => {
   const [clicked, setClicked] = React.useState(false);
   const [dragging, setDragging] = React.useState(false);
   const position = React.useRef(0);
@@ -43,6 +43,6 @@ export default function useDrag() {
     dragMove,
     dragging,
     position,
-    setDragging
+    setDragging,
   };
-}
+};

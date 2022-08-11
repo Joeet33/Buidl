@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useMoralis } from "react-moralis";
-import { PfpChange } from "../../interfaces/pfpChange";
 import { PfpForm } from "../pfpForm";
 import { DisplayForm } from "../modalPopup";
-import { PfpStyle } from "../settingsPfp/index.style";
+import { StylePfp } from "../displayPfp/index.styles";
 
 export const SettingsEditPfp = () => {
   const { Moralis, isInitialized } = useMoralis();
@@ -17,10 +16,10 @@ export const SettingsEditPfp = () => {
   return (
     <>
       {user && (
-        <PfpStyle
+        <StylePfp
           onClick={handlePfpChange}
           src={user?.attributes?.pfp}
-        ></PfpStyle>
+        ></StylePfp>
       )}
 
       {showPfpSelect && (

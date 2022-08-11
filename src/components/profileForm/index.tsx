@@ -6,7 +6,7 @@ import { SettingsEditPfp } from "../settingsEditPfp";
 import { SettingsEmploymentStatus } from "../settingsEmploymentStatus";
 import { SettingsPreviousJob } from "../settingsPreviousJob";
 import { SettingsUsername } from "../settingsUsername";
-import { FormWrapper } from "./index.styles";
+import { ProfileContainer } from "./index.styles";
 
 export const FormCard = () => {
   const [username, setUsername] = useState("");
@@ -16,22 +16,21 @@ export const FormCard = () => {
   const [employmentStatus, setemploymentStatus] = useState("");
   const { Moralis } = useMoralis();
 
-
-  const handleUsernameChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
   };
 
-  const handleBioChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const handleBioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBio(e.target.value);
   };
 
-  const handleCurrentChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const handleCurrentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setcurrentJob(e.target.value);
   };
-  const handlePreviousChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const handlePreviousChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setpreviousJob(e.target.value);
   };
-  const handleStatusChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const handleStatusChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setemploymentStatus(e.target.value);
   };
 
@@ -72,16 +71,15 @@ export const FormCard = () => {
     window.location.reload();
   };
   return (
-    <FormWrapper>
-    
+    <ProfileContainer>
       <SettingsEditPfp />
-    
+
       <SettingsUsername {...edits} />
       <SettingsBio {...edits} />
       <SettingsEmploymentStatus {...edits} />
       <SettingsPreviousJob {...edits} />
       <SettingsCurrentJob {...edits} />
       <button onClick={saveEdits}>SaveTest</button>
-    </FormWrapper>
+    </ProfileContainer>
   );
 };

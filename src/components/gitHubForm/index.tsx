@@ -1,10 +1,10 @@
-import { GitHubSaveUser } from "../settingsGitHubSaveUser";
-import { Wrapper } from "./index.styles";
+import { SettingsGitHubUser } from "../settingsGitHubSaveUser";
+import { GitHubFormContainer } from "./index.styles";
 
 export const GitHubForm = () => {
   return (
-    <Wrapper>
-      <GitHubSaveUser />
-    </Wrapper>
+    <GitHubFormContainer>
+      <SettingsGitHubUser />
+    </GitHubFormContainer>
   );
 };

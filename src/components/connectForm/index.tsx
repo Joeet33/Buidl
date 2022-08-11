@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { ROUTER_PATHS } from "../../routerPaths";
 import { ConnectContainer } from "./index.style";
 
-export const Connect = () => {
+export const ConnectForm = () => {
   const { authenticate, isAuthenticated, logout } = useMoralis();
   const navigate = useNavigate();
 

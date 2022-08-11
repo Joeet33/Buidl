@@ -1,5 +1,5 @@
 import { useMoralis } from "react-moralis";
-import { StyledContainer } from "../../components/main/mainWrapper";
+import { BodyContainer } from "../../components/bodyContainer/bodyContainer";
 import { Nav } from "../../components/nav";
 
 export const MarketPlaceEmployee = () => {
@@ -7,9 +7,9 @@ export const MarketPlaceEmployee = () => {
   return (
     <>
       <Nav />
-      <StyledContainer>
+      <BodyContainer>
         <button onClick={logout}>logout</button>
-      </StyledContainer>
+      </BodyContainer>
     </>
   );
 };

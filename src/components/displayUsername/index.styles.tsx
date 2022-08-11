@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const StyledUsername = styled.div``;
+export const UsernameContainer = styled.div``;

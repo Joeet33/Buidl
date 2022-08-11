@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const FormWrapper = styled.div`
+export const PfpContainer = styled.div`
   position: absolute;
 `;

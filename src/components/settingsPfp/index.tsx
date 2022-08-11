@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
-import { PfpOptions, PfpOption } from "./index.style";
+import { ChainSelect } from "../../interfaces/chainSelect";
+import { PfpSelection, PfpContainer } from "./index.style";
 
 export const SettingsPfp = () => {
   const { Moralis, isAuthenticated, account, isInitialized } = useMoralis();
@@ -14,40 +15,10 @@ export const SettingsPfp = () => {
     return url.replace("ipfs://", "https://gateway.ipfs.io/ipfs/");
   };
 
-  interface OptionsProps {
-    chain:
-      | "eth"
-      | "0x1"
-      | "ropsten"
-      | "0x3"
-      | "rinkeby"
-      | "0x4"
-      | "goerli"
-      | "0x5"
-      | "kovan"
-      | "0x2a"
-      | "polygon"
-      | "0x89"
-      | "mumbai"
-      | "0x13881"
-      | "bsc"
-      | "0x38"
-      | "bsc testnet"
-      | "0x61"
-      | "avalanche"
-      | "0xa86a"
-      | "avalanche testnet"
-      | "0xa869"
-      | "fantom"
-      | "0xfa"
-      | undefined;
-    address: string;
-  }
-
   useEffect(() => {
     if (user?.attributes?.ethAddress) {
       const fetchNFTs = async () => {
-        const options: OptionsProps = {
+        const options: ChainSelect = {
           chain: "mumbai",
           address: user?.attributes?.ethAddress,
         };
@@ -83,7 +54,7 @@ export const SettingsPfp = () => {
 
   const selectPfp = pfps?.map((e: string, i: number) => {
     return (
-      <PfpOption
+      <PfpSelection
         key={i}
         active={selectedPFP && selectedPFP === e}
         src={e}
@@ -97,7 +68,7 @@ export const SettingsPfp = () => {
 
   return (
     <>
-      <PfpOptions>{selectPfp}</PfpOptions>
+      <PfpContainer>{selectPfp}</PfpContainer>
 
       <button onClick={() => savePfpEdits()}>Save 2</button>
     </>

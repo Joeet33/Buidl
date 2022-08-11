@@ -13,11 +13,11 @@ const enableBodyScroll = () => {
 const disableBodyScroll = () => {
   document &&
     document.addEventListener("wheel", preventDefault, {
-      passive: false
+      passive: false,
     });
 };
 
-function usePreventBodyScroll() {
+const usePreventBodyScroll = () => {
   const [hidden, setHidden] = React.useState(false);
 
   React.useEffect(() => {
@@ -29,6 +29,6 @@ function usePreventBodyScroll() {
   const disableScroll = React.useCallback(() => setHidden(true), []);
   const enableScroll = React.useCallback(() => setHidden(false), []);
   return { disableScroll, enableScroll };
-}
+};
 
 export default usePreventBodyScroll;

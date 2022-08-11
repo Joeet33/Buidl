@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProfileDetails = styled.div`
+export const DisplayProfileContainer = styled.div`
   padding-left: 2vw;
   padding-right: 2vw;
   padding-top: 1vh;
@@ -10,7 +10,7 @@ export const ProfileDetails = styled.div`
   margin-bottom: 2vh;
 `;
 
-export const RepoDetails = styled.div`
+export const DisplayRepoContainer = styled.div`
   padding-left: 2vw;
   padding-right: 2vw;
   padding-top: 1vh;
@@ -21,7 +21,7 @@ export const RepoDetails = styled.div`
   text-align: center;
 `;
 
-export const ActivityDetails = styled.div`
+export const DisplayActivityContainer = styled.div`
   padding-left: 2vw;
   padding-right: 2vw;
   padding-top: 1vh;

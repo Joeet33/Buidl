@@ -2,15 +2,15 @@ import React from "react";
 
 import { VisibilityContext } from "react-horizontal-scrolling-menu";
 
-function Arrow({
+const Arrow = ({
   children,
   disabled,
-  onClick
+  onClick,
 }: {
   children: React.ReactNode;
   disabled: boolean;
   onClick: VoidFunction;
-}) {
+}) => {
   return (
     <button
       disabled={disabled}
@@ -22,20 +22,20 @@ function Arrow({
         justifyContent: "center",
         right: "1%",
         opacity: disabled ? "0" : "1",
-        userSelect: "none"
+        userSelect: "none",
       }}
     >
       {children}
     </button>
   );
-}
+};
 
-export function LeftArrow() {
+export const LeftArrow = () => {
   const {
     isFirstItemVisible,
     scrollPrev,
     visibleItemsWithoutSeparators,
-    initComplete
+    initComplete,
   } = React.useContext(VisibilityContext);
 
   const [disabled, setDisabled] = React.useState(
@@ -53,14 +53,11 @@ export function LeftArrow() {
       Left
     </Arrow>
   );
-}
+};
 
-export function RightArrow() {
-  const {
-    isLastItemVisible,
-    scrollNext,
-    visibleItemsWithoutSeparators
-  } = React.useContext(VisibilityContext);
+export const RightArrow = () => {
+  const { isLastItemVisible, scrollNext, visibleItemsWithoutSeparators } =
+    React.useContext(VisibilityContext);
 
   // console.log({ isLastItemVisible });
   const [disabled, setDisabled] = React.useState(
@@ -77,4 +74,4 @@ export function RightArrow() {
       Right
     </Arrow>
   );
-}
+};

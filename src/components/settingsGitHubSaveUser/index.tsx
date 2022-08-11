@@ -1,10 +1,9 @@
 import { FormEvent, useState } from "react";
 import axios from "axios";
 import { IGitHubUser } from "../../interfaces/IGitHubUser";
-import { RepositoriesList } from "../reposGitHubHorizontalScroll";
 import { useMoralis } from "react-moralis";
 
-export const GitHubSaveUser = () => {
+export const SettingsGitHubUser = () => {
   const [userSearch, setUserSearch] = useState<string>("");
   const [foundUser, setFoundUser] = useState<IGitHubUser>();
   const { Moralis, isInitialized } = useMoralis();

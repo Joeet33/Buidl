@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const GitHubFormContainer = styled.div`
   position: absolute;
   z-index: 1;
 `;
