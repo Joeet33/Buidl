@@ -3,6 +3,7 @@ import { DisplayBio } from "../displayBio";
 import { DisplayCurrentJob } from "../displayCurrentJob";
 import { DisplayEmploymentRole } from "../displayEmploymentRole";
 import { DisplayPfp } from "../displayPfp";
+import { StylePfp } from "../displayPfp/index.styles";
 import { DisplayPreviousJob } from "../displayPreviousJob";
 import { DisplayUsername } from "../displayUsername";
 import {
@@ -25,7 +26,15 @@ export const DisplayProfileForm = ({ editProfile }: Props) => {
   return (
     <DisplayProfileContainer>
       <FlexBox1>
-        <DisplayPfp />
+        {user?.attributes.pfp ? (
+          <DisplayPfp />
+        ) : (
+          <StylePfp
+            src={
+              "https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/egg-3442-e1f6463624338504cd021bf23aef8441@1x.jpg"
+            }
+          ></StylePfp>
+        )}
         <FlexBox2>
           <DisplayUsername />
           <DisplayBio />
