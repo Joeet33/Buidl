@@ -9,8 +9,6 @@ export const DisplayContactsContainer = styled(Card)`
   padding-bottom: 1vh;
   border-radius: 1vw;
   margin-bottom: 2vh;
-  position: relative;
-  top: 1vh;
   text-align: center;
 `;
 
@@ -25,7 +23,6 @@ export const StyledContacts = styled.div`
   text-align: center;
   img {
     position: relative;
-    width: 50%;
-    height: 50%;
+    width: 25%;
   }
 `;

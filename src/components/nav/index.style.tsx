@@ -6,6 +6,7 @@ export const NavContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  background-color: white;
 
   div {
     margin-right: auto;

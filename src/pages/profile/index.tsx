@@ -57,6 +57,7 @@ export const Profile = () => {
             <DisplayActivityContainer>
               <DisplayGitHubActivity />
             </DisplayActivityContainer>
+            <br></br>
           </>
         ) : (
           <GitHubNotLoggedIn loginChange={handleLoginChange} />

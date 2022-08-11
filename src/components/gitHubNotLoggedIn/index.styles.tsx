@@ -6,7 +6,7 @@ export const LoginContainer = styled(Card)`
   padding-left: 2vw;
   padding-right: 2vw;
   padding-top: 1vh;
-  padding-bottom: 1vh;
+  padding-bottom: 2vh;
   border-radius: 1vw;
   margin-bottom: 2vh;
   position: relative;
@@ -20,7 +20,6 @@ export const LoginContainer = styled(Card)`
 
   button {
     margin: 0;
-    position: relative;
-    top: 50%;
+    margin-top: 1vh;
   }
 `;

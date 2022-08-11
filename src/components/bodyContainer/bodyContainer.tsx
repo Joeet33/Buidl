@@ -5,5 +5,4 @@ export const BodyContainer = styled.div`
   padding-left:12vw;
   padding-right:12vw;
   padding-top: 3vh;
-  background-color: aqua;
 `;

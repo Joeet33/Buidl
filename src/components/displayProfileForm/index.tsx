@@ -24,8 +24,11 @@ export const DisplayProfileForm = ({ editProfile }: Props) => {
   const user = isInitialized ? Moralis.User.current() : undefined;
 
   return (
-    <DisplayProfileContainer >
+    <DisplayProfileContainer>
       <FlexBox1>
+        <DisplayUsername />
+      </FlexBox1>
+      <FlexBox2>
         {user?.attributes.pfp ? (
           <DisplayPfp />
         ) : (
@@ -35,11 +38,11 @@ export const DisplayProfileForm = ({ editProfile }: Props) => {
             }
           ></StylePfp>
         )}
-        <FlexBox2>
-          <DisplayUsername />
+      
           <DisplayBio />
-        </FlexBox2>
-      </FlexBox1>
+ 
+      </FlexBox2>
+
       <FlexBox3>
         <FlexBox4>
           {user?.attributes.employmentRole ? (

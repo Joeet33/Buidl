@@ -2,7 +2,11 @@ import { useMoralis } from "react-moralis";
 import { DisplayDiscord } from "../displayDiscord";
 import { DisplayTelegram } from "../displayTelegram";
 import { DisplayTwitter } from "../displayTwitter";
-import { DisplayContactsContainer, Flexbox, StyledContacts } from "./index.styles";
+import {
+  DisplayContactsContainer,
+  Flexbox,
+  StyledContacts,
+} from "./index.styles";
 
 export const DisplayContactForm = () => {
   const { Moralis, isInitialized } = useMoralis();
@@ -19,7 +23,7 @@ export const DisplayContactForm = () => {
             <StyledContacts>
               <img
                 src={
-                  "http://store-images.s-microsoft.com/image/apps.26737.9007199266244427.c75d2ced-a383-40dc-babd-1ad2ceb13c86.ed1d047e-03d9-4cd8-a342-c4ade1e58951"
+                  "https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png"
                 }
               ></img>
               <div>Twitter</div>
@@ -45,7 +49,7 @@ export const DisplayContactForm = () => {
             <StyledContacts>
               <img
                 src={
-                  "https://sparkcdnwus2.azureedge.net/sparkimageassets/XPDC2RH70K22MN-08afd558-a61c-4a63-9171-d3f199738e9f"
+                  "https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Circle-1024x1024.png"
                 }
               ></img>
               <div>Discord</div>
