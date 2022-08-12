@@ -6,6 +6,7 @@ import { DisplayPfp } from "../displayPfp";
 import { StylePfp } from "../displayPfp/index.styles";
 import { DisplayPreviousJob } from "../displayPreviousJob";
 import { DisplayUsername } from "../displayUsername";
+import { StyledButton } from "../settingsProfileForm/index.muistyles";
 import {
   BtnContainer,
   DisplayProfileContainer,
@@ -62,7 +63,7 @@ export const DisplayProfileForm = ({ editProfile }: Props) => {
           )}
         </FlexBox4>
         <BtnContainer>
-          <button onClick={editProfile}>Edit Profile</button>
+          <StyledButton variant="contained" onClick={editProfile}>Edit Profile</StyledButton>
         </BtnContainer>
       </FlexBox3>
     </DisplayProfileContainer>

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useMoralis } from "react-moralis";
-import { StylePfp } from "../displayPfp/index.styles";
 import { SettingsBio } from "../settingsBio";
 import { SettingsCurrentJob } from "../settingsCurrentJob";
 import { SettingsDiscord } from "../settingsDiscord";
@@ -10,6 +9,7 @@ import { SettingsPreviousJob } from "../settingsPreviousJob";
 import { SettingsTelegram } from "../settingsTelegram";
 import { SettingsTwitter } from "../settingsTwitter";
 import { SettingsUsername } from "../settingsUsername";
+import { StyledButton } from "./index.muistyles";
 import {
   FlexBox1,
   FlexBox2,
@@ -17,6 +17,7 @@ import {
   FlexBox4,
   FlexBox5,
   FlexBox6,
+  FlexBox7,
   ProfileContainer,
   StyledHeader,
 } from "./index.styles";
@@ -117,23 +118,27 @@ export const FormCard = () => {
 
       <FlexBox2>
         <FlexBox3>
-        <SettingsUsername {...edits} />
-        <SettingsBio {...edits} />
+          <SettingsUsername {...edits} />
+          <SettingsBio {...edits} />
         </FlexBox3>
         <FlexBox4>
-        <SettingsEmploymentStatus {...edits} />
-        <SettingsPreviousJob {...edits} />
+          <SettingsEmploymentStatus {...edits} />
+          <SettingsPreviousJob {...edits} />
         </FlexBox4>
         <FlexBox5>
-        <SettingsCurrentJob {...edits} />
-        <SettingsTwitter {...edits} />
+          <SettingsCurrentJob {...edits} />
+          <SettingsTwitter {...edits} />
         </FlexBox5>
         <FlexBox6>
-        <SettingsTelegram {...edits} />
-        <SettingsDiscord {...edits} />
+          <SettingsTelegram {...edits} />
+          <SettingsDiscord {...edits} />
         </FlexBox6>
-        <button onClick={saveEdits}>SaveTest</button>
       </FlexBox2>
+      <FlexBox7>
+        <StyledButton variant="contained" onClick={saveEdits}>
+          Save
+        </StyledButton>
+      </FlexBox7>
     </ProfileContainer>
   );
 };

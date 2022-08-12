@@ -10,8 +10,6 @@ export const DisplayProfileContainer = styled(Card)`
   margin-bottom: 2vh;
 `;
 
-
-
 export const FlexBox1 = styled.div`
   padding-top: 1vh;
   text-align: center;
@@ -20,9 +18,9 @@ export const FlexBox1 = styled.div`
 export const FlexBox2 = styled.div`
   display: flex;
 
-  div{
+  div {
     padding-top: 2vh;
-  padding-left: 2vw;
+    padding-left: 2vw;
   }
 `;
 

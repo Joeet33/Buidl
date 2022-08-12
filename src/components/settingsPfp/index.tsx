@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 import { ChainSelect } from "../../interfaces/chainSelect";
+import { StyledButton } from "../settingsProfileForm/index.muistyles";
 import { PfpSelection, PfpContainer } from "./index.style";
 
 export const SettingsPfp = () => {
@@ -70,7 +71,9 @@ export const SettingsPfp = () => {
     <>
       <PfpContainer>{selectPfp}</PfpContainer>
 
-      <button onClick={() => savePfpEdits()}>Save 2</button>
+      <StyledButton variant="contained" onClick={() => savePfpEdits()}>
+        Save
+      </StyledButton>
     </>
   );
 };

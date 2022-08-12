@@ -1,4 +1,3 @@
 import styled from "styled-components";
 
-export const GitHubFormContainer = styled.div`
-`;
+export const GitHubFormContainer = styled.div``;

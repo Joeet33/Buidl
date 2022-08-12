@@ -15,5 +15,14 @@ export const StyledGitHub = styled.img`
 `;
 
 export const GitHubFormContainer = styled.div`
-    text-align: center;
-`
+  text-align: center;
+`;
+
+export const FormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+
+  button {
+    margin-top: 2vh;
+  }
+`;
