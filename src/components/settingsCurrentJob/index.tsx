@@ -1,18 +1,19 @@
 import { useMoralis } from "react-moralis";
 import { SaveSettings } from "../../interfaces/saveSettings";
+import TextField from "@mui/material/TextField";
 
-export const SettingsCurrentJob = (edits: SaveSettings) => {
+export const SettingsCurrentJob = ({ handleCurrentChange }: SaveSettings) => {
   const { Moralis, isInitialized } = useMoralis();
   const user = isInitialized ? Moralis.User.current() : undefined;
 
   return (
     <>
       <div>
-        <input
-          name="NameChange"
-          width="100%"
-          placeholder={user?.attributes?.currentJob}
-          onChange={edits.handleCurrentChange}
+        <TextField
+          id="outlined-basic"
+          label="Current Work"
+          variant="outlined"
+          onChange={handleCurrentChange}
         />
       </div>
     </>

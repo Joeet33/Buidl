@@ -6,7 +6,7 @@ export const PfpForm = (pfpChange: PfpChange) => {
   return (
     <>
       <PfpContainer>
-        <button onClick={pfpChange.pfpChange}>X</button>
+        <div>Select a Profile Picture</div>
         <SettingsPfp />
       </PfpContainer>
     </>

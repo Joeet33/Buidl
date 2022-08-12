@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from "react";
 import axios from "axios";
 import { IGitHubUser } from "../../interfaces/IGitHubUser";
 import { useMoralis } from "react-moralis";
+import { FlexBox1, GitHubFormContainer, StyledGitHub } from "./index.styles";
 
 export const SettingsGitHubUser = () => {
   const [userSearch, setUserSearch] = useState<string>("");
@@ -42,14 +43,18 @@ export const SettingsGitHubUser = () => {
     }
   };
 
-
   useEffect(() => {
-    saveEdits()
+    saveEdits();
   }, [searchForUser, isInitialized]);
 
   return (
-    <>
-      <h2>Search for a user</h2>
+    <GitHubFormContainer>
+      <FlexBox1>
+        <h2>Search for a user</h2>
+        <StyledGitHub
+          src={"https://cdn-icons-png.flaticon.com/512/25/25231.png"}
+        ></StyledGitHub>
+      </FlexBox1>
       <form className="search-user" onSubmit={searchForUser}>
         <input
           value={userSearch}
@@ -58,6 +63,6 @@ export const SettingsGitHubUser = () => {
         />
         <button>Search</button>
       </form>
-    </>
+    </GitHubFormContainer>
   );
 };

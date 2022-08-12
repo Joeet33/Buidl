@@ -1,5 +1,6 @@
 import { useMoralis } from "react-moralis";
 import { SaveSettings } from "../../interfaces/saveSettings";
+import TextField from "@mui/material/TextField";
 
 export const SettingsTwitter = ({ handleTwitterChange }: SaveSettings) => {
   const { Moralis, isInitialized } = useMoralis();
@@ -8,10 +9,10 @@ export const SettingsTwitter = ({ handleTwitterChange }: SaveSettings) => {
   return (
     <>
       <div>
-        <input
-          name="NameChange"
-          width="100%"
-          placeholder={user?.attributes?.twitter}
+        <TextField
+          id="outlined-basic"
+          label="Twitter"
+          variant="outlined"
           onChange={handleTwitterChange}
         />
       </div>

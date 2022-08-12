@@ -1,5 +1,6 @@
 import { useMoralis } from "react-moralis";
 import { SaveSettings } from "../../interfaces/saveSettings";
+import TextField from "@mui/material/TextField";
 
 export const SettingsDiscord = ({ handleDiscordChange }: SaveSettings) => {
   const { Moralis, isInitialized } = useMoralis();
@@ -8,10 +9,10 @@ export const SettingsDiscord = ({ handleDiscordChange }: SaveSettings) => {
   return (
     <>
       <div>
-        <input
-          name="NameChange"
-          width="100%"
-          placeholder={user?.attributes?.discord}
+        <TextField
+          id="outlined-basic"
+          label="Discord"
+          variant="outlined"
           onChange={handleDiscordChange}
         />
       </div>
