@@ -10,7 +10,7 @@ export const SettingsBio = ({ handleBioChange }: SaveSettings) => {
     <>
       <div className="settingsPage">
         <TextField
-          id="outlined-basic"
+          id="bio"
           label="Bio"
           variant="outlined"
           onChange={handleBioChange}

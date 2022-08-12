@@ -10,7 +10,7 @@ export const SettingsTwitter = ({ handleTwitterChange }: SaveSettings) => {
     <>
       <div>
         <TextField
-          id="outlined-basic"
+          id="twitter"
           label="Twitter"
           variant="outlined"
           onChange={handleTwitterChange}

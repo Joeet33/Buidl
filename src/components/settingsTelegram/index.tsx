@@ -10,7 +10,7 @@ export const SettingsTelegram = ({ handleTelegramChange }: SaveSettings) => {
     <>
       <div>
         <TextField
-          id="outlined-basic"
+          id="telegram"
           label="Telegram"
           variant="outlined"
           onChange={handleTelegramChange}

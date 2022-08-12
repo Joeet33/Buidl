@@ -10,7 +10,7 @@ export const SettingsPreviousJob = ({ handlePreviousChange }: SaveSettings) => {
     <>
       <div>
         <TextField
-          id="outlined-basic"
+          id="previous_work"
           label="Previous Work"
           variant="outlined"
           onChange={handlePreviousChange}

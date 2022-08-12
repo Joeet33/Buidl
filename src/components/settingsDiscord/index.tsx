@@ -10,7 +10,7 @@ export const SettingsDiscord = ({ handleDiscordChange }: SaveSettings) => {
     <>
       <div>
         <TextField
-          id="outlined-basic"
+          id="discord"
           label="Discord"
           variant="outlined"
           onChange={handleDiscordChange}

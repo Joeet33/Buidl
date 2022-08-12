@@ -10,7 +10,7 @@ export const SettingsUsername = ({ handleUsernameChange }: SaveSettings) => {
     <>
       <div>
         <TextField
-          id="outlined-basic"
+          id="username"
           label="Username"
           variant="outlined"
           onChange={handleUsernameChange}

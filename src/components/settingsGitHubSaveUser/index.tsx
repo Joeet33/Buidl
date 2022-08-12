@@ -2,7 +2,12 @@ import { FormEvent, useEffect, useState } from "react";
 import axios from "axios";
 import { IGitHubUser } from "../../interfaces/IGitHubUser";
 import { useMoralis } from "react-moralis";
-import { FlexBox1, FormContainer, GitHubFormContainer, StyledGitHub } from "./index.styles";
+import {
+  FlexBox1,
+  FormContainer,
+  GitHubFormContainer,
+  StyledGitHub,
+} from "./index.styles";
 import { StyledButton } from "../settingsProfileForm/index.muistyles";
 import TextField from "@mui/material/TextField";
 
@@ -59,14 +64,14 @@ export const SettingsGitHubUser = () => {
       </FlexBox1>
       <FormContainer className="search-user" onSubmit={searchForUser}>
         <TextField
-          id="outlined-basic"
+          id="Github_search"
           label="Outlined"
           variant="outlined"
           value={userSearch}
           onChange={(e) => setUserSearch(e.target.value)}
         />
         <div>
-        <StyledButton variant="contained">Search</StyledButton>
+          <StyledButton type="submit" variant="contained">Search</StyledButton>
         </div>
       </FormContainer>
     </GitHubFormContainer>
