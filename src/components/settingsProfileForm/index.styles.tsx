@@ -49,6 +49,8 @@ export const FlexBox2 = styled.div`
 `;
 export const StyledHeader = styled.div`
   text-align: center;
+  font-size: 4vh;
+  font-weight: bold;
 `;
 
 export const FlexBox3 = styled.div`

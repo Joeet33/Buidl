@@ -13,7 +13,7 @@ export const DisplayTelegram = () => {
           "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/640px-Telegram_2019_Logo.svg.png"
         }
       ></img>
-      <div>{user && user?.attributes?.telegram}</div>
+      <div>Telegram: {user && user?.attributes?.telegram}</div>
     </StyledContacts>
   );
 };

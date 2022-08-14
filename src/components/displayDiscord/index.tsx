@@ -13,7 +13,7 @@ export const DisplayDiscord = () => {
           "https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Circle-1024x1024.png"
         }
       ></img>
-      <div>{user && user?.attributes?.discord}</div>
+      <div>Discord: {user && user?.attributes?.discord}</div>
     </StyledContacts>
   );
 };

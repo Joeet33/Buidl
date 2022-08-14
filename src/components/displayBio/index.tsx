@@ -1,9 +1,10 @@
 import { useMoralis } from "react-moralis";
+import { BioContainer } from "./index.styles";
 
 export const DisplayBio = () => {
   const { Moralis, isInitialized } = useMoralis();
 
   const user = isInitialized ? Moralis.User.current() : undefined;
 
-  return <div>{user && user?.attributes?.bio}</div>;
+  return <BioContainer>{user && user?.attributes?.bio}</BioContainer>;
 };

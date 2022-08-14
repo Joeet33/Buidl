@@ -17,6 +17,7 @@ import { FormCard } from "../../components/settingsProfileForm";
 import { DisplayProfileForm } from "../../components/displayProfileForm";
 import { DisplayContactForm } from "../../components/displayContactForm";
 import { StyledButton } from "../../components/settingsProfileForm/index.muistyles";
+import { StyledHeader } from "../../components/displayContactForm/index.styles";
 
 export const Profile = () => {
   const { Moralis, isInitialized } = useMoralis();
@@ -55,6 +56,7 @@ export const Profile = () => {
         {user?.attributes.github ? (
           <>
             <DisplayRepoContainer>
+              <StyledHeader>Github Repos</StyledHeader>
               <DisplayGitHubName />
               <DisplayRepos />
               <ButtonContainer>
@@ -64,6 +66,7 @@ export const Profile = () => {
               </ButtonContainer>
             </DisplayRepoContainer>
             <DisplayActivityContainer>
+            <StyledHeader>Github Activity</StyledHeader>
               <DisplayGitHubActivity />
             </DisplayActivityContainer>
             <br></br>

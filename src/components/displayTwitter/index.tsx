@@ -11,7 +11,7 @@ export const DisplayTwitter = () => {
       <img
         src={"https://assets.stickpng.com/thumbs/58e9196deb97430e819064f6.png"}
       ></img>
-      <div>{user && user?.attributes?.twitter}</div>
+      <div>Twitter: {user && user?.attributes?.twitter}</div>
     </StyledContacts>
   );
 };

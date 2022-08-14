@@ -65,13 +65,15 @@ export const SettingsGitHubUser = () => {
       <FormContainer className="search-user" onSubmit={searchForUser}>
         <TextField
           id="Github_search"
-          label="Outlined"
+          label="Name"
           variant="outlined"
           value={userSearch}
           onChange={(e) => setUserSearch(e.target.value)}
         />
         <div>
-          <StyledButton type="submit" variant="contained">Search</StyledButton>
+          <StyledButton type="submit" variant="contained">
+            Search
+          </StyledButton>
         </div>
       </FormContainer>
     </GitHubFormContainer>

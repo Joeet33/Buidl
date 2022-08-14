@@ -6,6 +6,7 @@ import {
   DisplayContactsContainer,
   Flexbox,
   StyledContacts,
+  StyledHeader,
 } from "./index.styles";
 
 export const DisplayContactForm = () => {
@@ -15,7 +16,7 @@ export const DisplayContactForm = () => {
   return (
     <>
       <DisplayContactsContainer>
-        <div>Contacts</div>
+        <StyledHeader>Contacts</StyledHeader>
         <Flexbox>
           {user?.attributes.twitter ? (
             <DisplayTwitter />

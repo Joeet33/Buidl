@@ -16,10 +16,13 @@ export const LoginContainer = styled(Card)`
 
   div {
     padding-top: 1vh;
+    font-size: 3vh;
+    font-weight: bold;
   }
 
   button {
     margin: 0;
     margin-top: 1vh;
+    padding-bottom: 1vh;
   }
 `;

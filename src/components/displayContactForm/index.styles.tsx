@@ -21,8 +21,16 @@ export const StyledContacts = styled.div`
   width: 100%;
   height: 100%;
   text-align: center;
+  font-size: 2.5vh;
   img {
     position: relative;
     width: 25%;
   }
+`;
+
+export const StyledHeader = styled.div`
+  font-weight: bold;
+  font-size: 3vh;
+  padding-bottom: 1vh;
+  text-align: center;
 `;
