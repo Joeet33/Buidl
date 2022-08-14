@@ -1,4 +1,5 @@
 import { useMoralis } from "react-moralis";
+import { NameContainer } from "./index.styles";
 
 export const DisplayGitHubName = () => {
   const { Moralis, isInitialized } = useMoralis();
@@ -7,9 +8,7 @@ export const DisplayGitHubName = () => {
   return (
     <>
       {user?.attributes.github && (
-        <div>
-          Github name: <br></br> {user.attributes.github.login}
-        </div>
+        <NameContainer>Name: {user.attributes.github.login}</NameContainer>
       )}
     </>
   );
