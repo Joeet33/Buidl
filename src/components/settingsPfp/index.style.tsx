@@ -14,5 +14,5 @@ export const PfpSelection = styled.img<PfpSelectProps>`
   margin-top: 10px;
   width: 110px;
   height: 110px;
-  border: ${(props) => (props.active ? "5px solid #1da1f2" : "5px")};
+  border: ${(props) => (props.active ? "5px solid #1da1f2" : "4px solid black")};
 `;

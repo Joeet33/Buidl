@@ -6,5 +6,7 @@ export const StylePfp = styled.img`
   margin-top: 10px;
   width: 110px;
   height: 110px;
-  border: 5px;
+  border: 4px;
+  border-color: black;
+  border-style: solid;
 `;
