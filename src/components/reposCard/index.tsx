@@ -1,3 +1,5 @@
+import { StyledCard } from "../reposGitHubHorizontalScroll/index.styles";
+
 export const ReposCard = ({
   title,
   repo_url,
@@ -6,29 +8,12 @@ export const ReposCard = ({
   repo_url: string;
 }) => {
   return (
-    <div
-      role="button"
-      style={{
-        border: "1px solid",
-        display: "inline-block",
-        margin: "0 10px",
-        width: "160px",
-        userSelect: "none",
-      }}
-      tabIndex={0}
-      className="card"
-    >
+    <StyledCard role="button" tabIndex={0} className="card">
       <div>
         <a href={repo_url} target="_blank" rel="noreferrer">
           {title}
         </a>
       </div>
-      <div
-        style={{
-          backgroundColor: "bisque",
-          height: "200px",
-        }}
-      />
-    </div>
+    </StyledCard>
   );
 };

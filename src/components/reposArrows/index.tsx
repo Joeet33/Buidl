@@ -1,6 +1,7 @@
 import React from "react";
 
 import { VisibilityContext } from "react-horizontal-scrolling-menu";
+import { StyledButon } from "./index.styles";
 
 const Arrow = ({
   children,
@@ -12,21 +13,13 @@ const Arrow = ({
   onClick: VoidFunction;
 }) => {
   return (
-    <button
+    <StyledButon
       disabled={disabled}
       onClick={onClick}
-      style={{
-        cursor: "pointer",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        right: "1%",
-        opacity: disabled ? "0" : "1",
-        userSelect: "none",
-      }}
+      variant="outlined"
     >
       {children}
-    </button>
+    </StyledButon>
   );
 };
 
@@ -50,7 +43,7 @@ export const LeftArrow = () => {
 
   return (
     <Arrow disabled={disabled} onClick={() => scrollPrev()}>
-      Left
+      &lt;
     </Arrow>
   );
 };
@@ -71,7 +64,7 @@ export const RightArrow = () => {
 
   return (
     <Arrow disabled={disabled} onClick={() => scrollNext()}>
-      Right
+      &gt;
     </Arrow>
   );
 };

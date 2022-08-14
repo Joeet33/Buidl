@@ -23,8 +23,13 @@ export const StyledContacts = styled.div`
   text-align: center;
   font-size: 2.5vh;
   img {
-    position: relative;
-    width: 25%;
+    border-radius: 50%;
+    margin-top: 10px;
+    width: 80px;
+    height: 80px;
+    border: 4px;
+    border-color: black;
+    border-style: solid;
   }
 `;
 
