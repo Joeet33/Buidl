@@ -5,7 +5,7 @@ import { StyledButton } from "../settingsProfileForm/index.muistyles";
 import { PfpSelection, PfpContainer } from "./index.style";
 
 export const SettingsPfp = () => {
-  const { Moralis, isAuthenticated, account, isInitialized } = useMoralis();
+  const { Moralis, isAuthenticated, isInitialized } = useMoralis();
   const Web3Api = useMoralisWeb3Api();
   const [pfps, setPfps] = useState<string[]>();
   const [selectedPFP, setSelectedPFP] = useState<string>();

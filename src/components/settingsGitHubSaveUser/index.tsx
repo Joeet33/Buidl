@@ -15,7 +15,6 @@ export const SettingsGitHubUser = () => {
   const [userSearch, setUserSearch] = useState<string>("");
   const [foundUser, setFoundUser] = useState<IGitHubUser>();
   const { Moralis, isInitialized } = useMoralis();
-  const user = isInitialized ? Moralis.User.current() : undefined;
 
   const performSearchRequest = async () => {
     try {

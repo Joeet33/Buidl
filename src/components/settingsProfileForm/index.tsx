@@ -23,8 +23,7 @@ import {
 } from "./index.styles";
 
 export const FormCard = () => {
-  const { Moralis, isInitialized } = useMoralis();
-  const user = isInitialized ? Moralis.User.current() : undefined;
+  const { Moralis } = useMoralis();
   const [username, setUsername] = useState("");
   const [bio, setBio] = useState("");
   const [currentJob, setcurrentJob] = useState("");
