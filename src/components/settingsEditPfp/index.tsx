@@ -3,6 +3,7 @@ import { useMoralis } from "react-moralis";
 import { PfpForm } from "../pfpForm";
 import { DisplayForm } from "../modalPopup";
 import { StylePfp } from "../displayPfp/index.styles";
+import { StyleSettingsPfp } from "./index.styles";
 
 export const SettingsEditPfp = () => {
   const { Moralis, isInitialized } = useMoralis();
@@ -16,10 +17,10 @@ export const SettingsEditPfp = () => {
   return (
     <>
       {user?.attributes?.pfp ? (
-        <StylePfp
+        <StyleSettingsPfp
           onClick={handlePfpChange}
           src={user?.attributes?.pfp}
-        ></StylePfp>
+        ></StyleSettingsPfp>
       ) : (
         <StylePfp
           src={

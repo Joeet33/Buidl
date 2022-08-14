@@ -18,3 +18,8 @@ export const DisplayActivityContainer = styled(Card)`
   border-radius: 1vw;
   margin-bottom: 2vh;
 `;
+
+export const ButtonContainer = styled.div`
+  text-align: right;
+  margin-top: 2vh;
+`

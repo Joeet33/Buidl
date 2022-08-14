@@ -8,5 +8,6 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
       min-height: 100vh;
       font-family: 'Anek Devanagari', sans-serif;
-      background-color: rgba(136, 49, 0, 0.2)
+      background-color: rgba(136, 49, 0, 0.2);
+      font-family: 'Oswald', sans-serif;
     }`;

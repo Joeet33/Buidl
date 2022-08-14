@@ -14,5 +14,10 @@ export const PfpSelection = styled.img<PfpSelectProps>`
   margin-top: 10px;
   width: 110px;
   height: 110px;
-  border: ${(props) => (props.active ? "5px solid #1da1f2" : "4px solid black")};
+  border: ${(props) =>
+    props.active ? "5px solid #1da1f2" : "4px solid black"};
+  cursor: ${(props) => (props.active ? "normal" : "pointer")};
+  :hover {
+    opacity: ${(props) => (props.active ? "100%" : "60%")};
+  }
 `;

@@ -4,7 +4,11 @@ import { Nav } from "../../components/nav";
 import { DisplayRepos } from "../../components/displayGitHubRepos";
 import { DisplayGitHubActivity } from "../../components/displayGitHubActivity";
 import { DisplayGitHubName } from "../../components/displayGitHubName";
-import { DisplayRepoContainer, DisplayActivityContainer } from "./index.styles";
+import {
+  DisplayRepoContainer,
+  DisplayActivityContainer,
+  ButtonContainer,
+} from "./index.styles";
 import { useMoralis } from "react-moralis";
 import { GitHubNotLoggedIn } from "../../components/gitHubNotLoggedIn";
 import { GitHubForm } from "../../components/gitHubForm";
@@ -51,11 +55,13 @@ export const Profile = () => {
         {user?.attributes.github ? (
           <>
             <DisplayRepoContainer>
-              <StyledButton variant="contained" onClick={handleLoginChange}>
-                change GiHtub Name
-              </StyledButton>
               <DisplayGitHubName />
               <DisplayRepos />
+              <ButtonContainer>
+                <StyledButton variant="contained" onClick={handleLoginChange}>
+                  change Github
+                </StyledButton>
+              </ButtonContainer>
             </DisplayRepoContainer>
             <DisplayActivityContainer>
               <DisplayGitHubActivity />
