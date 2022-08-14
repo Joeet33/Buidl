@@ -6,5 +6,13 @@ export const DisplayBio = () => {
 
   const user = isInitialized ? Moralis.User.current() : undefined;
 
-  return <BioContainer>{user && user?.attributes?.bio}</BioContainer>;
+  return (
+    <>
+      {user && user?.attributes.bio ? (
+        <BioContainer>{user && user?.attributes?.bio}</BioContainer>
+      ) : (
+        <BioContainer>Bio</BioContainer>
+      )}
+    </>
+  );
 };

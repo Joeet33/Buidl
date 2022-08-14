@@ -16,5 +16,6 @@ export const StyledButon = styled(Button)`
     background-color: black;
     color: white;
     font-weight: bold;
+    border-color: black;
   }
 `;
