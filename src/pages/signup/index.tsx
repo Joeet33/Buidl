@@ -1,9 +1,10 @@
 import { ConnectForm } from "../../components/connectForm";
-import { SignupContainer } from "./index.style";
+import { SignupContainer, StyledTitle } from "./index.style";
 
 export const Signup = () => {
   return (
     <SignupContainer>
+      <StyledTitle>Buidl</StyledTitle>
       <ConnectForm />
     </SignupContainer>
   );

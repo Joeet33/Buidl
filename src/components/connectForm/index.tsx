@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useMoralis } from "react-moralis";
 import { useNavigate } from "react-router";
 import { ROUTER_PATHS } from "../../routerPaths";
-import { ConnectContainer } from "./index.style";
+import { ConnectContainer, FlexBox, StyledButton } from "./index.style";
 
 export const ConnectForm = () => {
   const { authenticate, isAuthenticated, logout } = useMoralis();
@@ -16,23 +16,20 @@ export const ConnectForm = () => {
 
   return (
     <ConnectContainer>
-      <h1>Buidl</h1>
-      <button
-        type="button"
-        onClick={() =>
-          authenticate({
-            signingMessage: "Connect to our site via your wallet.",
-          })
-        }
-      >
-        login
-      </button>
-      <button type="button" onClick={() => logout()}>
-        logout
-      </button>
-      <button type="button" onClick={() => console.log(isAuthenticated)}>
-        test
-      </button>
+      <h1>Connect With Wallet</h1>
+      <FlexBox>
+        <StyledButton
+          variant="contained"
+          type="button"
+          onClick={() =>
+            authenticate({
+              signingMessage: "Connect to our site via your wallet.",
+            })
+          }
+        >
+          Connect
+        </StyledButton>
+      </FlexBox>
     </ConnectContainer>
   );
 };
