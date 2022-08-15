@@ -1,9 +1,11 @@
+import { useMoralis } from "react-moralis";
 import { Link } from "react-router-dom";
 import { ROUTER_PATHS } from "../../routerPaths";
 import { StyledButton } from "./index.muistyles";
 import { FlexBox1, FlexBox2, NavContainer, StyledLogo } from "./index.style";
 
 export const Nav = () => {
+  const { logout } = useMoralis();
   return (
     <NavContainer>
       <FlexBox1>
@@ -22,7 +24,9 @@ export const Nav = () => {
             <Link to={ROUTER_PATHS.PROFILE}>Profile</Link>
           </li>
         </ul>
-        <StyledButton variant="contained">Disconnect</StyledButton>
+        <StyledButton onClick={logout} variant="contained">
+          Disconnect
+        </StyledButton>
       </FlexBox2>
     </NavContainer>
   );
