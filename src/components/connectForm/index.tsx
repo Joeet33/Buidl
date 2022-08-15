@@ -5,7 +5,7 @@ import { ROUTER_PATHS } from "../../routerPaths";
 import { ConnectContainer, FlexBox, StyledButton } from "./index.style";
 
 export const ConnectForm = () => {
-  const { authenticate, isAuthenticated, logout } = useMoralis();
+  const { authenticate, isAuthenticated } = useMoralis();
   const navigate = useNavigate();
 
   useEffect(() => {

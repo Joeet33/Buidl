@@ -3,4 +3,5 @@ export const ROUTER_PATHS = {
   EMPLOYEE: "/",
   EMPLOYER: "/MarketplaceEmployer",
   PROFILE: "/Profile",
+  WALLET_TYPE: "/WalletType",
 };
