@@ -22,12 +22,12 @@ export const SettingsEditPfp = () => {
           src={user?.attributes?.pfp}
         ></StyleSettingsPfp>
       ) : (
-        <StylePfp
+        <StyleSettingsPfp
           src={
             "https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/egg-3442-e1f6463624338504cd021bf23aef8441@1x.jpg"
           }
           onClick={handlePfpChange}
-        ></StylePfp>
+        ></StyleSettingsPfp>
       )}
 
       {showPfpSelect && (

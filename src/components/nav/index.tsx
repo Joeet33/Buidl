@@ -1,27 +1,29 @@
 import { useMoralis } from "react-moralis";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+import { Profile } from "../../pages/profile";
 import { ROUTER_PATHS } from "../../routerPaths";
 import { StyledButton } from "./index.muistyles";
-import { FlexBox1, FlexBox2, NavContainer, StyledLogo } from "./index.style";
+import { FlexBox1, FlexBox2, NavContainer } from "./index.style";
 
 export const Nav = () => {
   const { logout } = useMoralis();
   return (
     <NavContainer>
       <FlexBox1>
-        <StyledLogo to={ROUTER_PATHS.EMPLOYEE}>Buidl</StyledLogo>
+        <NavLink to={ROUTER_PATHS.EMPLOYEE}>Buidl</NavLink>
       </FlexBox1>
 
       <FlexBox2>
         <ul>
           <li>
-            <Link to="">Apply</Link>
+            <NavLink to={ROUTER_PATHS.EMPLOYER}>Apply</NavLink>
           </li>
           <li>
-            <Link to="">Browse</Link>
+            <NavLink  to={ROUTER_PATHS.SIGNUP}>Browse</NavLink>
           </li>
           <li>
-            <Link to={ROUTER_PATHS.PROFILE}>Profile</Link>
+            <NavLink to={ROUTER_PATHS.PROFILE}>Profile</NavLink>
           </li>
         </ul>
         <StyledButton onClick={logout} variant="contained">

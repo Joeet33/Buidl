@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavContainer = styled.div`
@@ -8,24 +8,26 @@ export const NavContainer = styled.div`
   background-color: white;
 `;
 
-export const StyledLogo = styled(Link)`
-  display: -webkit-inline-box;
-  font-weight: bold;
-  font-size: 5vh;
-  color: rgba(136, 49, 0, 0.2);
-  text-decoration: none;
-  cursor: pointer;
-  padding-left: 2vw;
-  transition: transform 0.2s;
-
-  :hover {
-    transform: scale(1.1);
-  }
-`;
-
 export const FlexBox1 = styled.div`
   margin-top: auto;
   margin-bottom: auto;
+  a {
+    display: -webkit-inline-box;
+    font-weight: bold;
+    font-size: 5vh;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    padding-left: 2vw;
+    transition: transform 0.2s;
+
+    :hover {
+      transform: scale(1.1);
+    }
+    &.active {
+      color: rgba(136, 49, 0, 0.2);
+    }
+  }
 `;
 
 export const FlexBox2 = styled.div`
@@ -51,7 +53,21 @@ export const FlexBox2 = styled.div`
         :hover {
           transform: scale(1.1);
         }
+        &.active {
+          color: rgba(136, 49, 0, 0.2);
+        }
       }
     }
+  }
+`;
+
+export const StyledListActive = styled.li`
+  display: inline-flex;
+  padding-right: 4vw;
+  font-weight: bold;
+  font-size: 4vh;
+  a {
+    text-decoration: none;
+    color: rgba(136, 49, 0, 0.2);
   }
 `;
