@@ -5,43 +5,53 @@ export const NavContainer = styled.div`
   height: 10vh;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   background-color: white;
-
-  div {
-    margin-right: auto;
-    display: flex;
-    flex-direction: row;
-  }
-
-  ul {
-    list-style: none;
-
-    li {
-      display: inline-block;
-      padding-right: 4vw;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 4vh;
-    }
-  }
 `;
 
 export const StyledLogo = styled(Link)`
   display: -webkit-inline-box;
   font-weight: bold;
   font-size: 5vh;
+  color: rgba(136, 49, 0, 0.2);
   text-decoration: none;
-  cursor: default;
+  cursor: pointer;
   padding-left: 2vw;
-  align-items: center;
+  transition: transform 0.2s;
+
+  :hover {
+    transform: scale(1.1);
+  }
 `;
 
-export const StyledSearch = styled.div`
-  font-weight: bold;
-  font-size: 5vh;
-  text-decoration: none;
-  cursor: default;
-  padding-left: 3vw;
-  align-items: center;
+export const FlexBox1 = styled.div`
+  margin-top: auto;
+  margin-bottom: auto;
+`;
+
+export const FlexBox2 = styled.div`
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  padding-right: 3vw;
+  ul {
+    list-style: none;
+    padding-right: 3vw;
+
+    li {
+      display: inline-flex;
+      padding-right: 4vw;
+      font-weight: bold;
+      font-size: 4vh;
+      a {
+        text-decoration: none;
+        color: black;
+        transition: transform 0.2s;
+
+        :hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
 `;
