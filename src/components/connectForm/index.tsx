@@ -10,7 +10,7 @@ export const ConnectForm = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate(ROUTER_PATHS.EMPLOYEE);
+      navigate(ROUTER_PATHS.HOME);
     }
   }, [isAuthenticated]);
 

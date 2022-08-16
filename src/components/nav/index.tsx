@@ -9,13 +9,13 @@ export const Nav = () => {
   return (
     <NavContainer>
       <FlexBox1>
-        <NavLink to={ROUTER_PATHS.EMPLOYEE}>Buidl</NavLink>
+        <NavLink to={ROUTER_PATHS.HOME}>Buidl</NavLink>
       </FlexBox1>
 
       <FlexBox2>
         <ul>
           <li>
-            <NavLink to={ROUTER_PATHS.EMPLOYER}>Apply</NavLink>
+            <NavLink to={ROUTER_PATHS.APPLICATIONS}>Apply</NavLink>
           </li>
           <li>
             <NavLink to={ROUTER_PATHS.SIGNUP}>Browse</NavLink>

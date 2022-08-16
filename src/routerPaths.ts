@@ -1,7 +1,7 @@
 export const ROUTER_PATHS = {
   SIGNUP: "/Signup",
-  EMPLOYEE: "/",
-  EMPLOYER: "/MarketplaceEmployer",
+  HOME: "/",
+  APPLICATIONS: "/Applications",
   PROFILE: "/Profile",
   WALLET_TYPE: "/WalletType",
 };

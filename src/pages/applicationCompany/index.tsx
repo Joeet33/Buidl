@@ -1,11 +1,13 @@
 import { BodyContainer } from "../../components/bodyContainer/bodyContainer";
 import { Nav } from "../../components/nav";
 
-export const MarketPlaceEmployer = () => {
+export const ApplicationCompany = () => {
   return (
     <>
       <Nav />
-      <BodyContainer>employer</BodyContainer>
+      <BodyContainer>
+        <div>company</div>
+      </BodyContainer>
     </>
   );
 };

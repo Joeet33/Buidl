@@ -31,7 +31,7 @@ export const WalletType = () => {
 
     try {
       await myDetails?.save();
-      navigate(ROUTER_PATHS.EMPLOYEE);
+      navigate(ROUTER_PATHS.APPLICATIONS);
     } catch (err) {
       console.log(err);
     }
