@@ -10,7 +10,7 @@ import { WalletType } from "./pages/selectWalletType";
 import { ProfileCompany } from "./pages/profileCompany";
 
 export const App = () => {
-  const { isAuthenticated, isInitialized, Moralis } = useMoralis();
+  const { isInitialized, isAuthenticated, Moralis } = useMoralis();
   const user = isInitialized ? Moralis.User.current() : undefined;
   const navigate = useNavigate();
 
@@ -34,9 +34,16 @@ export const App = () => {
       <Route path={ROUTER_PATHS.EMPLOYER} element={<MarketPlaceEmployer />} />
       <Route path={ROUTER_PATHS.EMPLOYEE} element={<MarketPlaceEmployee />} />
 
-      <Route path={ROUTER_PATHS.PROFILE} element={<ProfileUser />} />
-
-      <Route path={ROUTER_PATHS.PROFILE} element={<ProfileCompany />} />
+      <Route
+        path={ROUTER_PATHS.PROFILE}
+        element={
+          user?.attributes.Wallet_Type === "users" ? (
+            <ProfileUser />
+          ) : (
+            <ProfileCompany />
+          )
+        }
+      />
     </Routes>
   );
 };
