@@ -9,7 +9,6 @@ export const StyledButton = styled(Button)`
   border-color: black;
   color: black;
   font-family: "Oswald";
-
   :hover {
     background-color: rgba(60, 60, 60, 0.75);
     border-color: rgba(60, 60, 60, 0.75);

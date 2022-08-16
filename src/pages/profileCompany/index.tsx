@@ -8,7 +8,7 @@ import {
   DisplayRepoContainer,
   DisplayActivityContainer,
   ButtonContainer,
-} from "./index.styles";
+} from "../profileUser/index.styles";
 import { useMoralis } from "react-moralis";
 import { GitHubNotLoggedIn } from "../../components/gitHubNotLoggedIn";
 import { GitHubForm } from "../../components/gitHubForm";
@@ -19,7 +19,7 @@ import { DisplayContactForm } from "../../components/displayContactForm";
 import { StyledButton } from "../../components/settingsProfileForm/index.muistyles";
 import { StyledHeader } from "../../components/displayContactForm/index.styles";
 
-export const Profile = () => {
+export const ProfileCompany = () => {
   const { Moralis, isInitialized } = useMoralis();
   const user = isInitialized ? Moralis.User.current() : undefined;
   const [showLogin, setShowLogin] = useState(false);
@@ -38,6 +38,8 @@ export const Profile = () => {
       <Nav />
       <BodyContainer>
         <DisplayProfileForm editProfile={handleFormChange} />
+        <div>Company</div>
+        <div>{user?.attributes.Wallet_Type}</div>
 
         {showForm && (
           <DisplayForm onClickClose={handleFormChange}>
@@ -66,7 +68,7 @@ export const Profile = () => {
               </ButtonContainer>
             </DisplayRepoContainer>
             <DisplayActivityContainer>
-            <StyledHeader>Github Activity</StyledHeader>
+              <StyledHeader>Github Activity</StyledHeader>
               <DisplayGitHubActivity />
             </DisplayActivityContainer>
             <br></br>

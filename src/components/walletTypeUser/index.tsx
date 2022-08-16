@@ -1,39 +1,15 @@
 import { useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
-import { StyledButton } from "../walletTypeCompany/index.styles";
+import { StyledButton } from "./index.styles";
 
-export const TypeUser = () => {
-  const { isAuthenticated, Moralis } = useMoralis();
-  const [typeUser, setTypeUser] = useState("");
+interface Props{
+  clickUser:any;
+}
 
-  const handleUserClick = () => {
-    setTypeUser("User");
-  };
-
-  const saveUserEdit = async () => {
-    const User = Moralis.Object.extend("_User");
-    const query = new Moralis.Query(User);
-    const myDetails = await query.first();
-
-    if (typeUser) {
-      myDetails?.set("Wallet_Type", typeUser);
-    }
-    try {
-      await myDetails?.save();
-    } catch (err) {
-      console.log(err);
-    }
-    window.location.reload();
-  };
-
-  useEffect(() => {
-    if (typeUser && isAuthenticated) {
-      saveUserEdit();
-    }
-  }, [typeUser, isAuthenticated]);
+export const TypeUser = (props:Props) => {
 
   return (
-    <StyledButton variant="outlined" onClick={handleUserClick}>
+    <StyledButton variant="outlined" onClick={props.clickUser}>
       User
     </StyledButton>
   );
