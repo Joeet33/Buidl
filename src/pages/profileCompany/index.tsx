@@ -38,8 +38,6 @@ export const ProfileCompany = () => {
       <Nav />
       <BodyContainer>
         <DisplayProfileForm editProfile={handleFormChange} />
-        <div>Company</div>
-        <div>{user?.attributes.Wallet_Type === "users" ? "its true" : "its false"}</div>
 
         {showForm && (
           <DisplayForm onClickClose={handleFormChange}>

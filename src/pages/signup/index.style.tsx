@@ -9,9 +9,10 @@ export const SignupContainer = styled.div`
 export const StyledTitle = styled.div`
   position: relative;
   width: 60%;
+  height: fit-content;
   text-align: center;
   font-size: 28vh;
   transform: rotate(330deg);
-  margin-left: 11vw;
+  margin-left: 2vw;
   margin-top: 9vh;
 `;
