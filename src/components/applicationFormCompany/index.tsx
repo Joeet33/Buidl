@@ -5,9 +5,10 @@ import { useState } from "react";
 import { useMoralis } from "react-moralis";
 import { StyledButton } from "../settingsProfileForm/index.muistyles";
 
-export const ApplicationForm = () => {
+export const ApplicationFormCompany = () => {
   const [application, setApplication] = useState();
-  const { Moralis } = useMoralis();
+  const { isInitialized, Moralis } = useMoralis();
+  const user = isInitialized ? Moralis.User.current() : undefined;
 
   const handleChange = (e: any) => {
     setApplication(e.target.value);
@@ -19,7 +20,7 @@ export const ApplicationForm = () => {
     const myDetails = await query.first();
 
     if (application) {
-      myDetails?.set("application", application);
+      myDetails?.set("applicationCompany", application);
     }
 
     try {
@@ -36,7 +37,7 @@ export const ApplicationForm = () => {
       <div>
         <TextField
           id="application"
-          label="application"
+          label={user?.attributes.applicationCompany === undefined ? "application" : user.attributes.applicationCompany}
           variant="outlined"
           onChange={handleChange}
         />

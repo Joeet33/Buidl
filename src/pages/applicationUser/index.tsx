@@ -1,4 +1,4 @@
-import { ApplicationForm } from "../../components/applicationForm";
+import { ApplicationFormUser } from "../../components/applicationFormUser";
 import { BodyContainer } from "../../components/bodyContainer/bodyContainer";
 import { Nav } from "../../components/nav";
 
@@ -7,7 +7,7 @@ export const ApplicationUser = () => {
     <>
       <Nav />
       <BodyContainer>
-        <ApplicationForm />
+        <ApplicationFormUser />
       </BodyContainer>
     </>
   );
