@@ -59,7 +59,7 @@ export const ApplicationFormCompany = () => {
           <StyledTitle>Application Form</StyledTitle>
           <StyledTextField
             id="application"
-            label={
+            placeholder={
               user?.attributes.applicationCompany === undefined
                 ? "application"
                 : user.attributes.applicationCompany
