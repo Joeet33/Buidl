@@ -1,5 +1,15 @@
 import { useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
+import {
+  FlexBox1,
+  FlexBox2,
+  FlexBox3,
+  FlexBox4,
+  StyledButton,
+  StyledCard,
+  StyledList,
+} from "../displayBrowseCompany/index.styles";
+import { StylePfp } from "../displayPfp/index.styles";
 
 export const DisplayBrowseUser = () => {
   const { isInitialized, Moralis } = useMoralis();
@@ -17,16 +27,37 @@ export const DisplayBrowseUser = () => {
   }, []);
 
   return (
-    <ul>
+    <>
       {applicationArr?.map((e: any, i: any) => {
         return (
           <>
-            {e.attributes.applicationUser === undefined ? null : (
-              <li>{e.attributes.applicationUser}</li>
+            {e?.attributes?.applicationUser === undefined ? null : (
+              <StyledCard>
+                <FlexBox1>
+                  {e?.attributes.pfp ? (
+                    <StylePfp src={e?.attributes?.pfp}></StylePfp>
+                  ) : (
+                    <StylePfp
+                      src={
+                        "https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/egg-3442-e1f6463624338504cd021bf23aef8441@1x.jpg"
+                      }
+                    ></StylePfp>
+                  )}
+                  <FlexBox3>
+                    <StyledButton variant="contained">See More</StyledButton>
+                  </FlexBox3>
+                </FlexBox1>
+                <FlexBox2>
+                  <FlexBox4>
+                    <div>{e?.attributes?.username}</div>
+                  </FlexBox4>
+                  <StyledList>{e?.attributes?.applicationUser}</StyledList>
+                </FlexBox2>
+              </StyledCard>
             )}
           </>
         );
       })}
-    </ul>
+    </>
   );
 };
