@@ -1,6 +1,5 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { ApplicationUser } from "./pages/applicationUser";
-import { ApplicationCompany } from "./pages/applicationCompany";
+
 import { ROUTER_PATHS } from "./routerPaths";
 import { Signup } from "./pages/signup";
 import { useMoralis } from "react-moralis";
@@ -9,6 +8,10 @@ import { ProfileUser } from "./pages/profileUser";
 import { WalletType } from "./pages/selectWalletType";
 import { ProfileCompany } from "./pages/profileCompany";
 import { Home } from "./pages/home";
+import { BrowseUser } from "./pages/browseUser";
+import { BrowseCompany } from "./pages/browseCompany";
+import { ApplicationCompany } from "./pages/applicationCompany";
+import { ApplicationUser } from "./pages/applicationUser";
 
 export const App = () => {
   const { isInitialized, isAuthenticated, Moralis } = useMoralis();
@@ -22,10 +25,10 @@ export const App = () => {
   }, [isAuthenticated, isInitialized]);
 
   useEffect(() => {
-    if (isAuthenticated && !user?.attributes.Wallet_Type) {
+    if (isAuthenticated && !user?.attributes.walletType) {
       navigate(ROUTER_PATHS.WALLET_TYPE);
     }
-  }, [isAuthenticated, user?.attributes.Wallet_Type]);
+  }, [isAuthenticated, user?.attributes.walletType]);
 
   return (
     <Routes>
@@ -35,9 +38,20 @@ export const App = () => {
 
       <Route path={ROUTER_PATHS.WALLET_TYPE} element={<WalletType />} />
       <Route
+        path={ROUTER_PATHS.BROWSE}
+        element={
+          user?.attributes.walletType === "users" ? (
+            <BrowseUser />
+          ) : (
+            <BrowseCompany />
+          )
+        }
+      />
+
+      <Route
         path={ROUTER_PATHS.APPLICATIONS}
         element={
-          user?.attributes.Wallet_Type === "users" ? (
+          user?.attributes.walletType === "users" ? (
             <ApplicationUser />
           ) : (
             <ApplicationCompany />
@@ -48,7 +62,7 @@ export const App = () => {
       <Route
         path={ROUTER_PATHS.PROFILE}
         element={
-          user?.attributes.Wallet_Type === "users" ? (
+          user?.attributes.walletType === "users" ? (
             <ProfileUser />
           ) : (
             <ProfileCompany />

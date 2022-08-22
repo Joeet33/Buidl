@@ -4,4 +4,5 @@ export const ROUTER_PATHS = {
   APPLICATIONS: "/Applications",
   PROFILE: "/Profile",
   WALLET_TYPE: "/WalletType",
+  BROWSE:"/Browse",
 };

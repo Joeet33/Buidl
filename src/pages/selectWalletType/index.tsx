@@ -27,7 +27,7 @@ export const WalletType = () => {
     const query = new Moralis.Query(User);
     const myDetails = await query.first();
 
-    myDetails?.set("Wallet_Type", walletType);
+    myDetails?.set("walletType", walletType);
 
     try {
       await myDetails?.save();

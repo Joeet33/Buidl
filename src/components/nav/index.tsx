@@ -18,7 +18,7 @@ export const Nav = () => {
             <NavLink to={ROUTER_PATHS.APPLICATIONS}>Apply</NavLink>
           </li>
           <li>
-            <NavLink to={ROUTER_PATHS.SIGNUP}>Browse</NavLink>
+            <NavLink to={ROUTER_PATHS.BROWSE}>Browse</NavLink>
           </li>
           <li>
             <NavLink to={ROUTER_PATHS.PROFILE}>Profile</NavLink>
