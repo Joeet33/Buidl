@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { ProfileUser } from "./pages/profileUser";
 import { WalletType } from "./pages/selectWalletType";
 import { ProfileCompany } from "./pages/profileCompany";
-import { Home } from "./pages/home";
 import { BrowseUser } from "./pages/browseUser";
 import { BrowseCompany } from "./pages/browseCompany";
 import { ApplicationCompany } from "./pages/applicationCompany";
@@ -33,8 +32,6 @@ export const App = () => {
   return (
     <Routes>
       <Route path={ROUTER_PATHS.SIGNUP} element={<Signup />} />
-
-      <Route path={ROUTER_PATHS.HOME} element={<Home />} />
 
       <Route path={ROUTER_PATHS.WALLET_TYPE} element={<WalletType />} />
       <Route

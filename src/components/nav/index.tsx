@@ -9,7 +9,7 @@ export const Nav = () => {
   return (
     <NavContainer>
       <FlexBox1>
-        <NavLink to={ROUTER_PATHS.HOME}>Buidl</NavLink>
+        <a href={ROUTER_PATHS.BROWSE}>Buidl</a>
       </FlexBox1>
 
       <FlexBox2>
