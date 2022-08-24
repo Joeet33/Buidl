@@ -11,14 +11,17 @@ export const StyledButton = styled(Button)`
   }
 `;
 
-interface Props{
-  active:any;
+interface Props {
+  active: any;
 }
 
 export const WalletTypeUser = styled(Button)<Props>`
-    background-color:  ${(props) => (props.active ? "white" : "black")};
-    color: ${(props) => (props.active ? "black" : "white")};
-    border-color: black;
+  height: 75%;
+  margin: right;
+
+  background-color: ${(props) => (props.active ? "white" : "black")};
+  color: ${(props) => (props.active ? "black" : "white")};
+  border-color: black;
 
   :hover {
     background-color: black;
@@ -28,9 +31,11 @@ export const WalletTypeUser = styled(Button)<Props>`
 `;
 
 export const WalletTypeCompany = styled(Button)<Props>`
-    background-color:  ${(props) => (props.active ? "white" : "black")};
-    color: ${(props) => (props.active ? "black" : "white")};
-    border-color: black;
+  height: 75%;
+  margin: right;
+  background-color: ${(props) => (props.active ? "white" : "black")};
+  color: ${(props) => (props.active ? "black" : "white")};
+  border-color: black;
 
   :hover {
     background-color: black;
