@@ -97,12 +97,13 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
   color: white;
   width: 20%;
   border-radius: 1vw;
-  text-align: center;
   font-weight: bold;
+  div {
+    justify-content: center;
+  }
 `;
 
 export const StyledAccordionDetails = styled(AccordionDetails)``;
-
 
 export const DisplayStatusContainer = styled(Card)`
   padding-left: 2vw;
@@ -113,7 +114,7 @@ export const DisplayStatusContainer = styled(Card)`
   margin-bottom: 2vh;
   text-align: center;
 
-  div{
+  div {
     justify-content: center;
     margin-left: 0;
   }

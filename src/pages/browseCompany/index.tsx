@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
-import { useMoralis } from "react-moralis";
 import { BodyContainer } from "../../components/bodyContainer/bodyContainer";
-import { DisplayBrowseUser } from "../../components/displayBrowseUser";
+import { DisplayBrowseCompany } from "../../components/displayBrowseCompany";
 import { Nav } from "../../components/nav";
 
 export const BrowseCompany = () => {
@@ -9,7 +7,7 @@ export const BrowseCompany = () => {
     <>
       <Nav />
       <BodyContainer>
-        <DisplayBrowseUser />
+        <DisplayBrowseCompany />
       </BodyContainer>
     </>
   );

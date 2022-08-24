@@ -38,9 +38,9 @@ export const App = () => {
         path={ROUTER_PATHS.BROWSE}
         element={
           user?.attributes.walletType === "users" ? (
-            <BrowseUser />
-          ) : (
             <BrowseCompany />
+          ) : (
+            <BrowseUser />
           )
         }
       />

@@ -74,7 +74,6 @@ export const DisplayBrowseCompany = () => {
 
                 <StyledAccordion>
                   <StyledAccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >

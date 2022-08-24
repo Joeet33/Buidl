@@ -9,7 +9,7 @@ import { SettingsPreviousJob } from "../settingsPreviousJob";
 import { SettingsTelegram } from "../settingsTelegram";
 import { SettingsTwitter } from "../settingsTwitter";
 import { SettingsUsername } from "../settingsUsername";
-import { StyledButton } from "./index.muistyles";
+import { StyledButton, WalletTypeCompany, WalletTypeUser } from "./index.muistyles";
 import {
   FlexBox1,
   FlexBox2,
@@ -32,6 +32,8 @@ export const FormCard = () => {
   const [twitter, setTwitter] = useState("");
   const [telegram, setTelegram] = useState("");
   const [discord, setDiscord] = useState("");
+  const [flagUser, setFlagUser] = useState(true);
+  const [flagCompany, setFlagCompany] = useState(true);
 
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
@@ -108,11 +110,40 @@ export const FormCard = () => {
     }
     window.location.reload();
   };
+
+  const handleCompanyClick = () => {
+    saveEdit("company");
+    setFlagCompany(!flagCompany);
+    setFlagUser(true)
+  };
+
+  const handleUserClick = () => {
+    saveEdit("users");
+    setFlagUser(!flagUser);
+    setFlagCompany(true)
+  };
+
+  const saveEdit = async (walletType: string) => {
+    const User = Moralis.Object.extend("_User");
+    const query = new Moralis.Query(User);
+    const myDetails = await query.first();
+
+    myDetails?.set("walletType", walletType);
+
+    try {
+      await myDetails?.save();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <ProfileContainer>
       <StyledHeader>Edit Profile</StyledHeader>
       <FlexBox1>
         <SettingsEditPfp />
+        <WalletTypeUser active={flagUser} variant="outlined" onClick={handleUserClick}>User</WalletTypeUser>
+        <WalletTypeCompany active={flagCompany} variant="outlined" onClick={handleCompanyClick}>Company</WalletTypeCompany>
       </FlexBox1>
 
       <FlexBox2>

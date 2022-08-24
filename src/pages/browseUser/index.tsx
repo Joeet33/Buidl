@@ -1,5 +1,5 @@
 import { BodyContainer } from "../../components/bodyContainer/bodyContainer";
-import { DisplayBrowseCompany } from "../../components/displayBrowseCompany";
+import { DisplayBrowseUser } from "../../components/displayBrowseUser";
 import { Nav } from "../../components/nav";
 
 export const BrowseUser = () => {
@@ -7,7 +7,7 @@ export const BrowseUser = () => {
     <>
       <Nav />
       <BodyContainer>
-        <DisplayBrowseCompany />
+        <DisplayBrowseUser />
       </BodyContainer>
     </>
   );

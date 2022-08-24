@@ -68,13 +68,12 @@ export const DisplayBrowseUser = () => {
                     <FlexBox4>
                       <div>{e?.attributes?.username}</div>
                     </FlexBox4>
-                    <StyledList>{e?.attributes?.applicationCompany}</StyledList>
+                    <StyledList>{e?.attributes?.applicationUser}</StyledList>
                   </FlexBox3>
                 </FlexBox1>
 
                 <StyledAccordion>
                   <StyledAccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
