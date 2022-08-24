@@ -11,6 +11,7 @@ export const NavContainer = styled.div`
 export const FlexBox1 = styled.div`
   margin-top: auto;
   margin-bottom: auto;
+  padding-right: 4vw;
   a {
     display: -webkit-inline-box;
     font-weight: bold;
@@ -31,6 +32,18 @@ export const FlexBox1 = styled.div`
 `;
 
 export const FlexBox2 = styled.div`
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: bold;
+  font-size: 4vh;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  cursor: default;
+  padding-left: 2vw;
+  transition: transform 0.2s;
+`;
+
+export const FlexBox3 = styled.div`
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
