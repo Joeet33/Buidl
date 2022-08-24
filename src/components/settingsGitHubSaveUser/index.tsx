@@ -15,6 +15,7 @@ export const SettingsGitHubUser = () => {
   const [userSearch, setUserSearch] = useState<string>("");
   const [foundUser, setFoundUser] = useState<IGitHubUser>();
   const { Moralis, isInitialized } = useMoralis();
+  const [isLoading, setIsLoading] = useState(false);
 
   const performSearchRequest = async () => {
     try {
@@ -22,6 +23,7 @@ export const SettingsGitHubUser = () => {
         `https://api.github.com/users/${userSearch}`
       );
       setFoundUser(response.data);
+      setIsLoading(true)
     } catch (error) {
       console.log(error);
     }
@@ -47,10 +49,13 @@ export const SettingsGitHubUser = () => {
     } catch (err) {
       console.log(err);
     }
+    window.location.reload();
   };
 
   useEffect(() => {
-    saveEdits();
+    if (isLoading) {
+      saveEdits();
+    }
   }, [searchForUser, isInitialized]);
 
   return (
@@ -70,7 +75,10 @@ export const SettingsGitHubUser = () => {
           onChange={(e) => setUserSearch(e.target.value)}
         />
         <div>
-          <StyledButton type="submit" variant="contained">
+          <StyledButton
+            type="submit"
+            variant="contained"
+          >
             Search
           </StyledButton>
         </div>
