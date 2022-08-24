@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
 import {
+  DisplayStatusContainer,
   FlexBox1,
   FlexBox2,
   FlexBox3,
@@ -80,28 +81,33 @@ export const DisplayBrowseCompany = () => {
                     Show More
                   </StyledAccordionSummary>
                   <StyledAccordionDetails>
-                    <FlexBox5>
-                      {e?.attributes.employmentRole ? (
-                        <div>
-                          {" "}
-                          Employment Role: {e?.attributes?.employmentRole}
-                        </div>
-                      ) : (
-                        <div>Employment Role</div>
-                      )}
-                      {e?.attributes.currentJob ? (
-                        <div>Current Company: {e?.attributes?.currentJob}</div>
-                      ) : (
-                        <div>Current Company</div>
-                      )}
-                      {e?.attributes.previousJob ? (
-                        <div>
-                          Previous Company: {e?.attributes?.previousJob}
-                        </div>
-                      ) : (
-                        <div>Previous Company</div>
-                      )}
-                    </FlexBox5>
+                    <DisplayStatusContainer>
+                      <StyledHeader>Status</StyledHeader>
+                      <FlexBox5>
+                        {e?.attributes.employmentRole ? (
+                          <div>
+                            {" "}
+                            Employment Role: {e?.attributes?.employmentRole}
+                          </div>
+                        ) : (
+                          <div>Employment Role</div>
+                        )}
+                        {e?.attributes.currentJob ? (
+                          <div>
+                            Current Company: {e?.attributes?.currentJob}
+                          </div>
+                        ) : (
+                          <div>Current Company</div>
+                        )}
+                        {e?.attributes.previousJob ? (
+                          <div>
+                            Previous Company: {e?.attributes?.previousJob}
+                          </div>
+                        ) : (
+                          <div>Previous Company</div>
+                        )}
+                      </FlexBox5>
+                    </DisplayStatusContainer>
 
                     <DisplayContactsContainer>
                       <StyledHeader>Contacts</StyledHeader>

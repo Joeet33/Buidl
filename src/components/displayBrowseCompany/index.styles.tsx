@@ -102,3 +102,19 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
 `;
 
 export const StyledAccordionDetails = styled(AccordionDetails)``;
+
+
+export const DisplayStatusContainer = styled(Card)`
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  border-radius: 1vw;
+  margin-bottom: 2vh;
+  text-align: center;
+
+  div{
+    justify-content: center;
+    margin-left: 0;
+  }
+`;
