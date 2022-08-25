@@ -20,7 +20,7 @@ export const SettingsPfp = () => {
     if (user?.attributes?.ethAddress) {
       const fetchNFTs = async () => {
         const options: ChainSelect = {
-          chain: "mumbai",
+          chain: "eth",
           address: user?.attributes?.ethAddress,
         };
         const ropstenNFTs = await Web3Api.account.getNFTs(options);
