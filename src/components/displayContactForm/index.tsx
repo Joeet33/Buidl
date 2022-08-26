@@ -8,6 +8,7 @@ import {
   StyledContacts,
   StyledHeader,
 } from "./index.styles";
+import { telegram, twitter, discord } from "../../assets/index";
 
 export const DisplayContactForm = () => {
   const { Moralis, isInitialized } = useMoralis();
@@ -22,11 +23,7 @@ export const DisplayContactForm = () => {
             <DisplayTwitter />
           ) : (
             <StyledContacts>
-              <img
-                src={
-                  "https://assets.stickpng.com/thumbs/58e9196deb97430e819064f6.png"
-                }
-              ></img>
+              <img src={twitter}></img>
               <div>Twitter</div>
             </StyledContacts>
           )}
@@ -35,11 +32,7 @@ export const DisplayContactForm = () => {
             <DisplayTelegram />
           ) : (
             <StyledContacts>
-              <img
-                src={
-                  "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/640px-Telegram_2019_Logo.svg.png"
-                }
-              ></img>
+              <img src={telegram}></img>
               <div>Telegram</div>
             </StyledContacts>
           )}
@@ -48,11 +41,7 @@ export const DisplayContactForm = () => {
             <DisplayDiscord />
           ) : (
             <StyledContacts>
-              <img
-                src={
-                  "https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Circle-1024x1024.png"
-                }
-              ></img>
+              <img src={discord}></img>
               <div>Discord</div>
             </StyledContacts>
           )}
