@@ -24,7 +24,7 @@ export const DisplayContactForm = () => {
             <StyledContacts>
               <img
                 src={
-                  "https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png"
+                  "https://assets.stickpng.com/thumbs/58e9196deb97430e819064f6.png"
                 }
               ></img>
               <div>Twitter</div>
